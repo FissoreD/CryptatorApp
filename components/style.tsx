@@ -100,6 +100,55 @@ const styles = StyleSheet.create({
     alignContent: 'center',
     borderRightWidth: 1,
   },
+  list: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  button: {
+    height: '10%',
+    width: '80%',
+    borderWidth: 2,
+    borderColor: colors.color,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  buttonList: {
+    height: '15%',
+    width: '80%',
+    borderWidth: 2,
+    borderColor: colors.color,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+  },
+  buttonLeft: {
+    display: 'flex',
+    flexBasis: '75%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRightWidth: 2,
+    borderColor: colors.color,
+  },
+  buttonRight: {
+    flexBasis: '25%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  blank: {
+    height: '5%',
+  },
+  text: {
+    color: colors.color,
+    fontSize: 30,
+    fontWeight: '600',
+  },
 });
 
 export default styles;
