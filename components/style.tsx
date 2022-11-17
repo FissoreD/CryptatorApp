@@ -34,6 +34,9 @@ const styles = StyleSheet.create({
   full: {
     height: '100%',
     width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
   },
   row: {
     alignItems: 'center',
@@ -107,7 +110,7 @@ const styles = StyleSheet.create({
     alignContent: 'center',
   },
   button: {
-    height: '10%',
+    height: '11%',
     width: '80%',
     borderWidth: 2,
     borderColor: colors.color,
