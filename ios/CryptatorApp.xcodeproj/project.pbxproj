@@ -14,6 +14,47 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-CryptatorApp-CryptatorAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-CryptatorApp-CryptatorAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		79666D05608644B5B67A2E45 /* cryptator.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 847AF34FFF54428C8807D7EE /* cryptator.ttf */; };
+		F68F8FE4B4CC443AA00E3C0C /* Cryptator-fontello.tsx in Resources */ = {isa = PBXBuildFile; fileRef = B35E95990108445D85FBDF53 /* Cryptator-fontello.tsx */; };
+		4CCA57ADB80E44FFA463B139 /* config.json in Resources */ = {isa = PBXBuildFile; fileRef = 5757F712715246C49EFE03C7 /* config.json */; };
+		3B244511FD2B4661B48BE085 /* cryptator.eot in Resources */ = {isa = PBXBuildFile; fileRef = F294AB65677B426C905DFA7C /* cryptator.eot */; };
+		A85EFA2696464997A335AF54 /* cryptator.js in Resources */ = {isa = PBXBuildFile; fileRef = 497999778D86497CB84FFBB3 /* cryptator.js */; };
+		DBF633C535F44507AA9158A9 /* cryptator.js.flow in Resources */ = {isa = PBXBuildFile; fileRef = 1AB52D66905E45B184DEE18D /* cryptator.js.flow */; };
+		78BE2DFD26774349BE57D11E /* cryptator.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CD4F3C19FEC434EB72223FE /* cryptator.json */; };
+		46D3F08771334552A890B655 /* cryptator.svg in Resources */ = {isa = PBXBuildFile; fileRef = A43E9F2C0E784D8D82236456 /* cryptator.svg */; };
+		7D58EAC5DB93447D90B7D632 /* cryptator.woff in Resources */ = {isa = PBXBuildFile; fileRef = 45C42E285BB8459FB08C7D07 /* cryptator.woff */; };
+		0417B58B8CB44A5FA8BDD481 /* cryptator.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = A27499C1918B46889DF05DCB /* cryptator.woff2 */; };
+		3552F49C0783496B91172BA9 /* bucket.svg in Resources */ = {isa = PBXBuildFile; fileRef = E8ECE57B4CBE428CAB6F6DBB /* bucket.svg */; };
+		0FA801C926D54F70B5002E8C /* circle_div.svg in Resources */ = {isa = PBXBuildFile; fileRef = 87CCDEA089204B96B569C9C4 /* circle_div.svg */; };
+		85A635D4E6A0415EAAD2DFB7 /* circle_eq.svg in Resources */ = {isa = PBXBuildFile; fileRef = F4C0F1C2F05E4170BD528627 /* circle_eq.svg */; };
+		04427A39729343AFA5C0E692 /* circle_gt.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7E113F3E1714413A85D7DA1C /* circle_gt.svg */; };
+		5A285D958B2E499EB9918F78 /* circle_lt.svg in Resources */ = {isa = PBXBuildFile; fileRef = 3B64CFA62E2940A6B14C5784 /* circle_lt.svg */; };
+		1F61E4EB3C704B9B93C7BFE8 /* circle_minus.svg in Resources */ = {isa = PBXBuildFile; fileRef = 14E9E7824B194E558601FBA8 /* circle_minus.svg */; };
+		400B7A0E0F484EF2BF3D738D /* circle_mod.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9C27ED2676C44DCE84ACC932 /* circle_mod.svg */; };
+		800D13DD20EF4D96945EDF53 /* circle_neq.svg in Resources */ = {isa = PBXBuildFile; fileRef = 476775BED395458AB609429D /* circle_neq.svg */; };
+		401394DE90B94A61B65A4D89 /* circle_plus.svg in Resources */ = {isa = PBXBuildFile; fileRef = 33B2174E261E4EEFA66EC7F0 /* circle_plus.svg */; };
+		0DC213280F234DE4A965C13E /* circle_power.svg in Resources */ = {isa = PBXBuildFile; fileRef = DD3B34439D7241229C86420C /* circle_power.svg */; };
+		605BFF84CDD84C38A868A7B9 /* circle_times.svg in Resources */ = {isa = PBXBuildFile; fileRef = A12CA370D06040DFB85953D2 /* circle_times.svg */; };
+		FF6A1F22A44F446BAC15A1FC /* div.svg in Resources */ = {isa = PBXBuildFile; fileRef = 5F6ED6B9DB1E42C095CA71A2 /* div.svg */; };
+		403C526D49084588991E1C43 /* eq.svg in Resources */ = {isa = PBXBuildFile; fileRef = 61F28CB7D1B941C8B080FD74 /* eq.svg */; };
+		A7988B1A06684E4E9C87B501 /* gt.svg in Resources */ = {isa = PBXBuildFile; fileRef = 4B0CCE3FE2E540CAB003C4C7 /* gt.svg */; };
+		DDD9E7A7CC444F6587AA0BFF /* lightbulb.svg in Resources */ = {isa = PBXBuildFile; fileRef = E8AFACB3E3FD4DA9B69672B4 /* lightbulb.svg */; };
+		40B6713E2CA040CBA57AACE9 /* lt.svg in Resources */ = {isa = PBXBuildFile; fileRef = D09959EB65B4416DA701A6A6 /* lt.svg */; };
+		12A4B7087AA041DAB23CF3CB /* minus.svg in Resources */ = {isa = PBXBuildFile; fileRef = CEE75AC53D6B4FA58D5A781A /* minus.svg */; };
+		0951FB11BD464869B76670F6 /* mod.svg in Resources */ = {isa = PBXBuildFile; fileRef = CB2DE87EED29493185FCFFFB /* mod.svg */; };
+		FB6D409A6AE848AF919E73F3 /* neq.svg in Resources */ = {isa = PBXBuildFile; fileRef = 53D875AEA8B74EB8A7A2AC35 /* neq.svg */; };
+		F68DDFE8C5EE432BBB1CAE36 /* pen.svg in Resources */ = {isa = PBXBuildFile; fileRef = E9D8A27AAF90411CAD0D1173 /* pen.svg */; };
+		4EDD0EC9803F4F5CBFAEACD7 /* pencil.svg in Resources */ = {isa = PBXBuildFile; fileRef = 81979A2BEAFD49AF93B9B35F /* pencil.svg */; };
+		CD7A50906FC44B27A502931B /* plus.svg in Resources */ = {isa = PBXBuildFile; fileRef = 7B015B9FB9B24056804D3D7C /* plus.svg */; };
+		EEE73A345AA14DC1988D5150 /* power.svg in Resources */ = {isa = PBXBuildFile; fileRef = FC5F7115CC42464A80D6ECCB /* power.svg */; };
+		C6FD0F84263F4BCF9C9EC4D4 /* redo.svg in Resources */ = {isa = PBXBuildFile; fileRef = D2FBD000835C4426A3921D7D /* redo.svg */; };
+		6C26D458AAB647CC9E669DB8 /* redo_thin.svg in Resources */ = {isa = PBXBuildFile; fileRef = 422D6E2D83BD4B5E9FB9E036 /* redo_thin.svg */; };
+		E1328D7BE7B94843A1BD71B5 /* star_empty.svg in Resources */ = {isa = PBXBuildFile; fileRef = FEC050D943104DFDBFD7F81B /* star_empty.svg */; };
+		B5399247FD154824B2EA0A35 /* star_full.svg in Resources */ = {isa = PBXBuildFile; fileRef = D4C3CD063BA34E4E830BCD87 /* star_full.svg */; };
+		3AD90BE09CFB490290A20287 /* tick.svg in Resources */ = {isa = PBXBuildFile; fileRef = 209CC6F97FF54E6198AB828E /* tick.svg */; };
+		B0BCCC2F424745A68518388F /* times.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8D21A5C4C9A8419B9CD4AD41 /* times.svg */; };
+		31BC2BD25FAD4C87AB1E6FEB /* undo.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9C4A3E5EF2FB4EC2B761CF16 /* undo.svg */; };
+		F8574DF85D1548B0816D72E6 /* undo_thin.svg in Resources */ = {isa = PBXBuildFile; fileRef = 9338C4059A0B463B87BA2909 /* undo_thin.svg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +85,48 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CryptatorApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-CryptatorApp-CryptatorAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptatorApp-CryptatorAppTests.release.xcconfig"; path = "Target Support Files/Pods-CryptatorApp-CryptatorAppTests/Pods-CryptatorApp-CryptatorAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		847AF34FFF54428C8807D7EE /* cryptator.ttf */ = {isa = PBXFileReference; name = "cryptator.ttf"; path = "../font/cryptator.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		12994B792C5A47D6810E665E /* Cryptator-expo.tsx */ = {isa = PBXFileReference; name = "Cryptator-expo.tsx"; path = "../font/Cryptator-expo.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B35E95990108445D85FBDF53 /* Cryptator-fontello.tsx */ = {isa = PBXFileReference; name = "Cryptator-fontello.tsx"; path = "../font/Cryptator-fontello.tsx"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5757F712715246C49EFE03C7 /* config.json */ = {isa = PBXFileReference; name = "config.json"; path = "../font/config.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F294AB65677B426C905DFA7C /* cryptator.eot */ = {isa = PBXFileReference; name = "cryptator.eot"; path = "../font/cryptator.eot"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		497999778D86497CB84FFBB3 /* cryptator.js */ = {isa = PBXFileReference; name = "cryptator.js"; path = "../font/cryptator.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1AB52D66905E45B184DEE18D /* cryptator.js.flow */ = {isa = PBXFileReference; name = "cryptator.js.flow"; path = "../font/cryptator.js.flow"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5CD4F3C19FEC434EB72223FE /* cryptator.json */ = {isa = PBXFileReference; name = "cryptator.json"; path = "../font/cryptator.json"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A43E9F2C0E784D8D82236456 /* cryptator.svg */ = {isa = PBXFileReference; name = "cryptator.svg"; path = "../font/cryptator.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		45C42E285BB8459FB08C7D07 /* cryptator.woff */ = {isa = PBXFileReference; name = "cryptator.woff"; path = "../font/cryptator.woff"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A27499C1918B46889DF05DCB /* cryptator.woff2 */ = {isa = PBXFileReference; name = "cryptator.woff2"; path = "../font/cryptator.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E8ECE57B4CBE428CAB6F6DBB /* bucket.svg */ = {isa = PBXFileReference; name = "bucket.svg"; path = "../font/icons/bucket.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		87CCDEA089204B96B569C9C4 /* circle_div.svg */ = {isa = PBXFileReference; name = "circle_div.svg"; path = "../font/icons/circle_div.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F4C0F1C2F05E4170BD528627 /* circle_eq.svg */ = {isa = PBXFileReference; name = "circle_eq.svg"; path = "../font/icons/circle_eq.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7E113F3E1714413A85D7DA1C /* circle_gt.svg */ = {isa = PBXFileReference; name = "circle_gt.svg"; path = "../font/icons/circle_gt.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3B64CFA62E2940A6B14C5784 /* circle_lt.svg */ = {isa = PBXFileReference; name = "circle_lt.svg"; path = "../font/icons/circle_lt.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		14E9E7824B194E558601FBA8 /* circle_minus.svg */ = {isa = PBXFileReference; name = "circle_minus.svg"; path = "../font/icons/circle_minus.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C27ED2676C44DCE84ACC932 /* circle_mod.svg */ = {isa = PBXFileReference; name = "circle_mod.svg"; path = "../font/icons/circle_mod.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		476775BED395458AB609429D /* circle_neq.svg */ = {isa = PBXFileReference; name = "circle_neq.svg"; path = "../font/icons/circle_neq.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		33B2174E261E4EEFA66EC7F0 /* circle_plus.svg */ = {isa = PBXFileReference; name = "circle_plus.svg"; path = "../font/icons/circle_plus.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DD3B34439D7241229C86420C /* circle_power.svg */ = {isa = PBXFileReference; name = "circle_power.svg"; path = "../font/icons/circle_power.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A12CA370D06040DFB85953D2 /* circle_times.svg */ = {isa = PBXFileReference; name = "circle_times.svg"; path = "../font/icons/circle_times.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5F6ED6B9DB1E42C095CA71A2 /* div.svg */ = {isa = PBXFileReference; name = "div.svg"; path = "../font/icons/div.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		61F28CB7D1B941C8B080FD74 /* eq.svg */ = {isa = PBXFileReference; name = "eq.svg"; path = "../font/icons/eq.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4B0CCE3FE2E540CAB003C4C7 /* gt.svg */ = {isa = PBXFileReference; name = "gt.svg"; path = "../font/icons/gt.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E8AFACB3E3FD4DA9B69672B4 /* lightbulb.svg */ = {isa = PBXFileReference; name = "lightbulb.svg"; path = "../font/icons/lightbulb.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D09959EB65B4416DA701A6A6 /* lt.svg */ = {isa = PBXFileReference; name = "lt.svg"; path = "../font/icons/lt.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CEE75AC53D6B4FA58D5A781A /* minus.svg */ = {isa = PBXFileReference; name = "minus.svg"; path = "../font/icons/minus.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CB2DE87EED29493185FCFFFB /* mod.svg */ = {isa = PBXFileReference; name = "mod.svg"; path = "../font/icons/mod.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		53D875AEA8B74EB8A7A2AC35 /* neq.svg */ = {isa = PBXFileReference; name = "neq.svg"; path = "../font/icons/neq.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E9D8A27AAF90411CAD0D1173 /* pen.svg */ = {isa = PBXFileReference; name = "pen.svg"; path = "../font/icons/pen.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		81979A2BEAFD49AF93B9B35F /* pencil.svg */ = {isa = PBXFileReference; name = "pencil.svg"; path = "../font/icons/pencil.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7B015B9FB9B24056804D3D7C /* plus.svg */ = {isa = PBXFileReference; name = "plus.svg"; path = "../font/icons/plus.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FC5F7115CC42464A80D6ECCB /* power.svg */ = {isa = PBXFileReference; name = "power.svg"; path = "../font/icons/power.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D2FBD000835C4426A3921D7D /* redo.svg */ = {isa = PBXFileReference; name = "redo.svg"; path = "../font/icons/redo.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		422D6E2D83BD4B5E9FB9E036 /* redo_thin.svg */ = {isa = PBXFileReference; name = "redo_thin.svg"; path = "../font/icons/redo_thin.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FEC050D943104DFDBFD7F81B /* star_empty.svg */ = {isa = PBXFileReference; name = "star_empty.svg"; path = "../font/icons/star_empty.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D4C3CD063BA34E4E830BCD87 /* star_full.svg */ = {isa = PBXFileReference; name = "star_full.svg"; path = "../font/icons/star_full.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		209CC6F97FF54E6198AB828E /* tick.svg */ = {isa = PBXFileReference; name = "tick.svg"; path = "../font/icons/tick.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8D21A5C4C9A8419B9CD4AD41 /* times.svg */ = {isa = PBXFileReference; name = "times.svg"; path = "../font/icons/times.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9C4A3E5EF2FB4EC2B761CF16 /* undo.svg */ = {isa = PBXFileReference; name = "undo.svg"; path = "../font/icons/undo.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9338C4059A0B463B87BA2909 /* undo_thin.svg */ = {isa = PBXFileReference; name = "undo_thin.svg"; path = "../font/icons/undo_thin.svg"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +205,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				EBD88BCD9C204F7D9C43AD4A /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +231,56 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		EBD88BCD9C204F7D9C43AD4A /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				847AF34FFF54428C8807D7EE /* cryptator.ttf */,
+				12994B792C5A47D6810E665E /* Cryptator-expo.tsx */,
+				B35E95990108445D85FBDF53 /* Cryptator-fontello.tsx */,
+				5757F712715246C49EFE03C7 /* config.json */,
+				F294AB65677B426C905DFA7C /* cryptator.eot */,
+				497999778D86497CB84FFBB3 /* cryptator.js */,
+				1AB52D66905E45B184DEE18D /* cryptator.js.flow */,
+				5CD4F3C19FEC434EB72223FE /* cryptator.json */,
+				A43E9F2C0E784D8D82236456 /* cryptator.svg */,
+				45C42E285BB8459FB08C7D07 /* cryptator.woff */,
+				A27499C1918B46889DF05DCB /* cryptator.woff2 */,
+				E8ECE57B4CBE428CAB6F6DBB /* bucket.svg */,
+				87CCDEA089204B96B569C9C4 /* circle_div.svg */,
+				F4C0F1C2F05E4170BD528627 /* circle_eq.svg */,
+				7E113F3E1714413A85D7DA1C /* circle_gt.svg */,
+				3B64CFA62E2940A6B14C5784 /* circle_lt.svg */,
+				14E9E7824B194E558601FBA8 /* circle_minus.svg */,
+				9C27ED2676C44DCE84ACC932 /* circle_mod.svg */,
+				476775BED395458AB609429D /* circle_neq.svg */,
+				33B2174E261E4EEFA66EC7F0 /* circle_plus.svg */,
+				DD3B34439D7241229C86420C /* circle_power.svg */,
+				A12CA370D06040DFB85953D2 /* circle_times.svg */,
+				5F6ED6B9DB1E42C095CA71A2 /* div.svg */,
+				61F28CB7D1B941C8B080FD74 /* eq.svg */,
+				4B0CCE3FE2E540CAB003C4C7 /* gt.svg */,
+				E8AFACB3E3FD4DA9B69672B4 /* lightbulb.svg */,
+				D09959EB65B4416DA701A6A6 /* lt.svg */,
+				CEE75AC53D6B4FA58D5A781A /* minus.svg */,
+				CB2DE87EED29493185FCFFFB /* mod.svg */,
+				53D875AEA8B74EB8A7A2AC35 /* neq.svg */,
+				E9D8A27AAF90411CAD0D1173 /* pen.svg */,
+				81979A2BEAFD49AF93B9B35F /* pencil.svg */,
+				7B015B9FB9B24056804D3D7C /* plus.svg */,
+				FC5F7115CC42464A80D6ECCB /* power.svg */,
+				D2FBD000835C4426A3921D7D /* redo.svg */,
+				422D6E2D83BD4B5E9FB9E036 /* redo_thin.svg */,
+				FEC050D943104DFDBFD7F81B /* star_empty.svg */,
+				D4C3CD063BA34E4E830BCD87 /* star_full.svg */,
+				209CC6F97FF54E6198AB828E /* tick.svg */,
+				8D21A5C4C9A8419B9CD4AD41 /* times.svg */,
+				9C4A3E5EF2FB4EC2B761CF16 /* undo.svg */,
+				9338C4059A0B463B87BA2909 /* undo_thin.svg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +378,48 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				79666D05608644B5B67A2E45 /* cryptator.ttf in Resources */,
+				C8FAF3FE00474F818B65F593 /* Cryptator-expo.tsx in Resources */,
+				F68F8FE4B4CC443AA00E3C0C /* Cryptator-fontello.tsx in Resources */,
+				4CCA57ADB80E44FFA463B139 /* config.json in Resources */,
+				3B244511FD2B4661B48BE085 /* cryptator.eot in Resources */,
+				A85EFA2696464997A335AF54 /* cryptator.js in Resources */,
+				DBF633C535F44507AA9158A9 /* cryptator.js.flow in Resources */,
+				78BE2DFD26774349BE57D11E /* cryptator.json in Resources */,
+				46D3F08771334552A890B655 /* cryptator.svg in Resources */,
+				7D58EAC5DB93447D90B7D632 /* cryptator.woff in Resources */,
+				0417B58B8CB44A5FA8BDD481 /* cryptator.woff2 in Resources */,
+				3552F49C0783496B91172BA9 /* bucket.svg in Resources */,
+				0FA801C926D54F70B5002E8C /* circle_div.svg in Resources */,
+				85A635D4E6A0415EAAD2DFB7 /* circle_eq.svg in Resources */,
+				04427A39729343AFA5C0E692 /* circle_gt.svg in Resources */,
+				5A285D958B2E499EB9918F78 /* circle_lt.svg in Resources */,
+				1F61E4EB3C704B9B93C7BFE8 /* circle_minus.svg in Resources */,
+				400B7A0E0F484EF2BF3D738D /* circle_mod.svg in Resources */,
+				800D13DD20EF4D96945EDF53 /* circle_neq.svg in Resources */,
+				401394DE90B94A61B65A4D89 /* circle_plus.svg in Resources */,
+				0DC213280F234DE4A965C13E /* circle_power.svg in Resources */,
+				605BFF84CDD84C38A868A7B9 /* circle_times.svg in Resources */,
+				FF6A1F22A44F446BAC15A1FC /* div.svg in Resources */,
+				403C526D49084588991E1C43 /* eq.svg in Resources */,
+				A7988B1A06684E4E9C87B501 /* gt.svg in Resources */,
+				DDD9E7A7CC444F6587AA0BFF /* lightbulb.svg in Resources */,
+				40B6713E2CA040CBA57AACE9 /* lt.svg in Resources */,
+				12A4B7087AA041DAB23CF3CB /* minus.svg in Resources */,
+				0951FB11BD464869B76670F6 /* mod.svg in Resources */,
+				FB6D409A6AE848AF919E73F3 /* neq.svg in Resources */,
+				F68DDFE8C5EE432BBB1CAE36 /* pen.svg in Resources */,
+				4EDD0EC9803F4F5CBFAEACD7 /* pencil.svg in Resources */,
+				CD7A50906FC44B27A502931B /* plus.svg in Resources */,
+				EEE73A345AA14DC1988D5150 /* power.svg in Resources */,
+				C6FD0F84263F4BCF9C9EC4D4 /* redo.svg in Resources */,
+				6C26D458AAB647CC9E669DB8 /* redo_thin.svg in Resources */,
+				E1328D7BE7B94843A1BD71B5 /* star_empty.svg in Resources */,
+				B5399247FD154824B2EA0A35 /* star_full.svg in Resources */,
+				3AD90BE09CFB490290A20287 /* tick.svg in Resources */,
+				B0BCCC2F424745A68518388F /* times.svg in Resources */,
+				31BC2BD25FAD4C87AB1E6FEB /* undo.svg in Resources */,
+				F8574DF85D1548B0816D72E6 /* undo_thin.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

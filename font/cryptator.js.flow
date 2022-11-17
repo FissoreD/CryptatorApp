@@ -1,0 +1,9 @@
+/**
+ * @flow strict
+ */
+
+import type Icon from 'react-native-vector-icons';
+
+export type CryptatorGlyphs =  'icon-circle_plus' | 'icon-circle_minus' | 'icon-circle_times' | 'icon-circle_div' | 'icon-circle_mod' | 'icon-circle_power' | 'icon-circle_eq' | 'icon-circle_lt' | 'icon-circle_gt' | 'icon-circle_neq' | 'icon-plus' | 'icon-minus' | 'icon-times' | 'icon-div' | 'icon-mod' | 'icon-power' | 'icon-eq' | 'icon-lt' | 'icon-gt' | 'icon-neq' | 'icon-tick' | 'icon-bucket' | 'icon-lightbulb' | 'icon-pen' | 'icon-pencil' | 'icon-star_empty' | 'icon-star_full' | 'icon-redo_thin' | 'icon-redo' | 'icon-undo_thin' | 'icon-undo';
+
+declare export default Class<Icon<CryptatorGlyphs>>;

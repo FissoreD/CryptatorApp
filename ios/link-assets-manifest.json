@@ -1,0 +1,173 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "font/Cryptator-expo.tsx",
+      "sha1": "1d0b9f169308065408c43b4dbe1325ca378733a0"
+    },
+    {
+      "path": "font/Cryptator-fontello.tsx",
+      "sha1": "875342cd59c6635e3e213d061b3e49a38942ec9e"
+    },
+    {
+      "path": "font/config.json",
+      "sha1": "0a4f7c180803ba5ebe0c0b4c6f8087f74162d41a"
+    },
+    {
+      "path": "font/cryptator.eot",
+      "sha1": "0cc76db678094fee0f042ad9e96c2e22f48f2a61"
+    },
+    {
+      "path": "font/cryptator.js",
+      "sha1": "f908aea40754375b9c344479b5100f6681873f32"
+    },
+    {
+      "path": "font/cryptator.js.flow",
+      "sha1": "ae61536595741774aae849318876304fa315d011"
+    },
+    {
+      "path": "font/cryptator.json",
+      "sha1": "9b50ec603d31e392e583bacce15ad03f8767cd83"
+    },
+    {
+      "path": "font/cryptator.svg",
+      "sha1": "34c0e4eb1408555e1bd76a811364f81568de0e71"
+    },
+    {
+      "path": "font/cryptator.ttf",
+      "sha1": "a48b4a6c5457e83691f71937faaaeb1a3baee7b9"
+    },
+    {
+      "path": "font/cryptator.woff",
+      "sha1": "c751b8f48a6a0ebe9c18477e8af2f6cba8b2edd7"
+    },
+    {
+      "path": "font/cryptator.woff2",
+      "sha1": "9534d5a25ac3785afd3211ce1aec3dc8bffef17c"
+    },
+    {
+      "path": "font/icons/bucket.svg",
+      "sha1": "a77bf053865653c9b1822ee47c97492148647eec"
+    },
+    {
+      "path": "font/icons/circle_div.svg",
+      "sha1": "359e6addff27d3c3db01198f14147b48b6c8ead8"
+    },
+    {
+      "path": "font/icons/circle_eq.svg",
+      "sha1": "8ed5aac112e12c781f383585d41f13671b86a88c"
+    },
+    {
+      "path": "font/icons/circle_gt.svg",
+      "sha1": "34cb45e4d1c2c3981c93946c323dbfa393473bf6"
+    },
+    {
+      "path": "font/icons/circle_lt.svg",
+      "sha1": "0ffad61783810bd6aa4a610637b2b4803cd918d1"
+    },
+    {
+      "path": "font/icons/circle_minus.svg",
+      "sha1": "d0570c2d8a7ad2f94f731f04db8860845881e5aa"
+    },
+    {
+      "path": "font/icons/circle_mod.svg",
+      "sha1": "e7634d4ceddae2e6da1d196fe83a7e69d0fb04c3"
+    },
+    {
+      "path": "font/icons/circle_neq.svg",
+      "sha1": "505fdb16102a9d9bddf4a674da1da3c0c11f8248"
+    },
+    {
+      "path": "font/icons/circle_plus.svg",
+      "sha1": "cd087dd2651a22f96cd5766604aa404d2140f5d5"
+    },
+    {
+      "path": "font/icons/circle_power.svg",
+      "sha1": "0f4d32050750296a69ec4b80b6cb11b6a949d0e4"
+    },
+    {
+      "path": "font/icons/circle_times.svg",
+      "sha1": "c2452f07ca15d84e9d9f9ae259f93a369c94c920"
+    },
+    {
+      "path": "font/icons/div.svg",
+      "sha1": "3c56d90ab7ad198f0cfcd6240f7e4bfdae13fc14"
+    },
+    {
+      "path": "font/icons/eq.svg",
+      "sha1": "d6aa0bf02c5cc083198a9276182b5ecf581b1f31"
+    },
+    {
+      "path": "font/icons/gt.svg",
+      "sha1": "b4e354f6abb5feb7e753ffdeafbf091826af0f84"
+    },
+    {
+      "path": "font/icons/lightbulb.svg",
+      "sha1": "fc3911afd52f3243d26859802105fbedafb4c500"
+    },
+    {
+      "path": "font/icons/lt.svg",
+      "sha1": "a781646f165b8dc863de1f2525ce0064eb411490"
+    },
+    {
+      "path": "font/icons/minus.svg",
+      "sha1": "0eeda0e1cacd26c00b829b53b9f8e3a28ad69581"
+    },
+    {
+      "path": "font/icons/mod.svg",
+      "sha1": "6b8f2c38079a1d0201b461c91d92cce653109605"
+    },
+    {
+      "path": "font/icons/neq.svg",
+      "sha1": "c26e1e5613a1fec60af4748f0d51e7ff3ac8169e"
+    },
+    {
+      "path": "font/icons/pen.svg",
+      "sha1": "87a7e5170eafdec7166a4ede194ef530f2b199fc"
+    },
+    {
+      "path": "font/icons/pencil.svg",
+      "sha1": "2581e4e3cd8a6ded1e19e93d21b01b7767ecc2b1"
+    },
+    {
+      "path": "font/icons/plus.svg",
+      "sha1": "40e41d7ca5e9f4c636fba96e238e957cc8a4a5dc"
+    },
+    {
+      "path": "font/icons/power.svg",
+      "sha1": "c6c59043346edb49750d092a87cb9a1fff8e3207"
+    },
+    {
+      "path": "font/icons/redo.svg",
+      "sha1": "048df91deacc4060acaf3939131a79e90a13ea50"
+    },
+    {
+      "path": "font/icons/redo_thin.svg",
+      "sha1": "b394073b7f3ed83adb55f9a783448603ec188b50"
+    },
+    {
+      "path": "font/icons/star_empty.svg",
+      "sha1": "01bbaa9214c162fe35eebc4dcd76ac6a6b92a846"
+    },
+    {
+      "path": "font/icons/star_full.svg",
+      "sha1": "70b65f8639e74525abe5f95eb758593fda9de5f4"
+    },
+    {
+      "path": "font/icons/tick.svg",
+      "sha1": "e0940e84b2718a9ce3790fc4f41d816f6c22cfb0"
+    },
+    {
+      "path": "font/icons/times.svg",
+      "sha1": "deb7d46e9182dccffea683584ee8843680433268"
+    },
+    {
+      "path": "font/icons/undo.svg",
+      "sha1": "e7ec14c71bd41c1173ad7f6eb0f742cbe2d2a2a6"
+    },
+    {
+      "path": "font/icons/undo_thin.svg",
+      "sha1": "e7bdca03b0954354bf07bef2788b92fe4f2d39b8"
+    }
+  ]
+}
