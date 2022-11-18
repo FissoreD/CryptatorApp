@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, View, Text, Pressable, useWindowDimensions } from 'react-native';
+import { SafeAreaView, View, Text, Pressable, ScrollView, useWindowDimensions } from 'react-native';
 import styles from '../components/style';
 import Header from '../components/Header';
 import puzzles from '../navigation/puzzlesList';
@@ -43,28 +43,30 @@ function ClassicScreen({ route, navigation }: Props) {
     const tit = puzzles[index].name;
     const id = puzzles[index].id; 
     const name = (puzzles[index].done) ? "tick" : (puzzles[index].fav) ? "star_full" : ""; 
-    buttons.push(<View key = {2*Number(index)} style = {styles.buttonList}>
-        <Pressable
-          style = {styles.buttonLeft}
-          onPress={() => {
-              console.log(puzzles[index].name)
-              navigation.navigate('Puzzle')//, params:{ id: {id} }})
+    buttons.push(
+      <View key = {Number(index)} style = {styles.buttonContainer}>
+        <View style = {styles.buttonList}>
+          <Pressable
+            style = {styles.buttonLeft}
+            onPress={() => {
+                console.log(puzzles[index].name)
+                navigation.navigate('Puzzle')//, params:{ id: {id} }})
+              }
             }
-          }
-        >
-          <Text style = {styles.text}>{tit}</Text>
-        </Pressable>
-        <FavIcon name = {name} />
+          >
+            <Text style = {styles.text}>{tit}</Text>
+          </Pressable>
+          <FavIcon name = {name} />
+        </View>
       </View>)
-    buttons.push(<View key = {2*Number(index) + 1} style = {styles.blank}></View>)
   }
 
   return (
     <SafeAreaView style={[styles.container, {backgroundColor: colors.backgroundColor}]}>
       <Header title = "Cryptator" width={width}/>
-      <View style = {styles.list}>
+      <ScrollView showsVerticalScrollIndicator={true} contentContainerStyle={[styles.list, {flexGrow: 1,}]}>
         {buttons}
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
