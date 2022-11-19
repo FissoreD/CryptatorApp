@@ -2,7 +2,9 @@
 const colors = {
   backgroundColor : '#763df2', // 118 61 242
   color : '#fff', // 255 255 255
+  black : '#000', // 255 255 255
   lightgray : '#d9d9d9', // 217 217 217
+  darkgray : '#606060', // 96 96 96
   highlight : '#b388f5', // 179 136 245
   blue : '#5fb3f9', // 95 179 249
   violet : '#bf71df', // 191 113 223

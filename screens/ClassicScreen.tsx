@@ -28,7 +28,7 @@ const FavIcon = (props: FavProps) =>  {
 
   return (
     <Pressable
-      style = {styles.buttonRight}
+      style = {[styles.buttonRight, styles.center]}
       onPress={onPress}
     >
       <Icons name={name} size={50} style={{color: colors.color}} />
@@ -44,10 +44,10 @@ function ClassicScreen({ route, navigation }: Props) {
     const id = puzzles[index].id; 
     const name = (puzzles[index].done) ? "tick" : (puzzles[index].fav) ? "star_full" : ""; 
     buttons.push(
-      <View key = {Number(index)} style = {styles.buttonContainer}>
+      <View key = {Number(index)} style = {styles.pad10_20}>
         <View style = {styles.buttonList}>
           <Pressable
-            style = {styles.buttonLeft}
+            style = {[styles.buttonLeft, styles.center]}
             onPress={() => {
                 console.log(puzzles[index].name)
                 navigation.navigate('Puzzle')//, params:{ id: {id} }})

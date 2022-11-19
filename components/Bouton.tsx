@@ -1,13 +1,14 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet } from 'react-native';
+import { Pressable, TouchableOpacity, StyleSheet } from 'react-native';
 import colors from './colors';
 import Icons from '../font/Cryptator-fontello';
 
 interface IconProps {
   name: string,
   print: string,
-  selectedItem: any,
   flexBasis: string,
+  onPress: any,
+  selectedItem: any,
   setSelectedItem: React.Dispatch<React.SetStateAction<any>>,
 }
 
@@ -37,13 +38,14 @@ const ClickableIcon = (props: IconProps) => {
 
   const onPlay = async () => {
     setSelectedItem(props.name);
+    props.onPress(props.name);
     console.log(props.print)
   };
 
   return (
-    <TouchableOpacity onPress={onPlay} style={[style.item, {backgroundColor: activeBackgroundColor}]}>
+    <Pressable onPress={onPlay} style={[style.item, {backgroundColor: activeBackgroundColor}]}>
       <Icons name={props.name} size={80} style={{color: activeColor}} />
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 

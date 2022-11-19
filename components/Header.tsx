@@ -20,15 +20,15 @@ const Header: React.FC<Props> = ({title, width, right}) => {
   }
 
   return (
-    <View style={styles.header}>
-      <View style={styles.headerLeft}>
+    <View style={[styles.header, styles.center, styles.row]}>
+      <View style={[styles.headerLeft, styles.center]}>
         <Icon name='menu' size={width/8} color={colors.color}
           tvParallaxProperties={undefined}
           onPress={() => console.log('menu')}
         />
       </View>
-      <View style={styles.headerTitle}>
-        <Text style={styles.headerText}>{title}</Text>
+      <View style={[styles.headerTitle, styles.center]}>
+        <Text style={styles.text}>{title}</Text>
       </View>
       {rightElem}
     </View>

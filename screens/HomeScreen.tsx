@@ -9,7 +9,7 @@ function HomeScreen({ route, navigation }: Props) {
   return (
     <SafeAreaView style={[styles.container, {backgroundColor: colors.backgroundColor}]}>
       <Pressable
-        style = {styles.full}
+        style = {[styles.full, styles.center]}
         onPress={() => {
             console.log("start")
             navigation.navigate('Menu')
