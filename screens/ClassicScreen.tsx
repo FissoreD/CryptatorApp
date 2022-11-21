@@ -41,7 +41,6 @@ function ClassicScreen({ route, navigation }: Props) {
   const buttons = [];
   for (let index in puzzles) {
     const tit = puzzles[index].name;
-    const id = puzzles[index].id; 
     const name = (puzzles[index].done) ? "tick" : (puzzles[index].fav) ? "star_full" : ""; 
     buttons.push(
       <View key = {Number(index)} style = {styles.pad10_20}>
@@ -50,7 +49,7 @@ function ClassicScreen({ route, navigation }: Props) {
             style = {[styles.buttonLeft, styles.center]}
             onPress={() => {
                 console.log(puzzles[index].name)
-                navigation.navigate('Puzzle')//, params:{ id: {id} }})
+                navigation.navigate('Puzzle', { index })
               }
             }
           >
@@ -64,7 +63,7 @@ function ClassicScreen({ route, navigation }: Props) {
   return (
     <SafeAreaView style={[styles.container, {backgroundColor: colors.backgroundColor}]}>
       <Header title = "Cryptator" width={width}/>
-      <ScrollView showsVerticalScrollIndicator={true} contentContainerStyle={[styles.list, {flexGrow: 1,}]}>
+      <ScrollView showsVerticalScrollIndicator={true} contentContainerStyle={{flexGrow: 1,}}>
         {buttons}
       </ScrollView>
     </SafeAreaView>

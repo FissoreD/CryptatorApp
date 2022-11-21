@@ -10,8 +10,9 @@ interface Props {
   title: string;
   width: number;
   right?: boolean;
+  onLayout?:any;
 }
-const Header: React.FC<Props> = ({title, width, right}) => {
+const Header: React.FC<Props> = ({title, width, right, onLayout}) => {
   const [selectedItem, setSelectedItem] = React.useState(null);
   let rightElem = <View style={styles.headerRight} />
   if (right) {
@@ -21,7 +22,7 @@ const Header: React.FC<Props> = ({title, width, right}) => {
   }
 
   return (
-    <View style={[styles.header, styles.center, styles.row]}>
+    <View style={[styles.header, styles.center, styles.row]} onLayout = {onLayout}>
       <View style={[styles.headerLeft, styles.center]}>
         <Icon name='menu' size={width/8} color={colors.color}
           tvParallaxProperties={undefined}

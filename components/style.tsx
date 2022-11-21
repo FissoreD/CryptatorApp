@@ -111,6 +111,12 @@ const styles = StyleSheet.create({
     width: CIRCLE_SIZE,
     borderWidth: BORDER_SIZE,
     borderRadius: CIRCLE_SIZE/2,
+  },
+  letter: {
+    height: CIRCLE_SIZE,
+    width: CIRCLE_SIZE,
+    fontSize: CIRCLE_SIZE-10,
+    fontWeight: '600',
   }
 });
 

@@ -5,14 +5,11 @@ import styles from './style';
 
 interface NumberProps {
   name: string,
-  selected: boolean,
   onPressNumber: any,
-  done: boolean,
   selectedNumbers: string[],
   setSelectedNumbers: React.Dispatch<React.SetStateAction<string[]>>,
   doneNumbers: string[],
   setDoneNumbers: React.Dispatch<React.SetStateAction<string[]>>,
-  tool?: string,
   style?: any
 }
 
@@ -21,7 +18,7 @@ const Number = (props: NumberProps) => {
   const { doneNumbers, setDoneNumbers } = props;
 
   const activeColor = doneNumbers.includes(props.name) ? colors.lightgray : selectedNumbers.includes(props.name) ? colors.color : colors.black;
-  const activeBackgroundColor = selectedNumbers.includes(props.name) ? colors.black : colors.color;
+  const activeBackgroundColor = selectedNumbers.includes(props.name) ? colors.black : colors.none;
   const activeBorderColor = doneNumbers.includes(props.name) ? colors.lightgray : colors.black;
 
   const style = [styles.circle, styles.center, {borderColor: activeBorderColor, backgroundColor: activeBackgroundColor}];

@@ -15,6 +15,7 @@ const colors = {
   green : '#94d769', // 148 215 105
   darkgreen : '#377e3f', // 55 126 63
   darkblue : '#2d25d7', // 45 37 215
+  none : '#fff0', // 255 255 255 0
 }
 
 export default colors;

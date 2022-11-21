@@ -1,28 +1,67 @@
+import { OPERATORS, COMPARATORS } from '../components/constants';
 
+interface PuzzleData {
+  name: string;
+  equation: string[];
+}
 
 interface Puzzle {
-  id: string,
   name: string;
+  equation: string[];
+  max: number;
+  letters: string[];
   fav: boolean;
   done: boolean;
 }
 
-const puzzles:Puzzle[] = [
-  {id: '1', name: 'SEND+MORE', fav: true, done: false},
-  {id: '2', name: 'a+b=c', fav: false, done: true},
-  {id: '3', name: 'coucou-toi', fav: false, done: false},
-  {id: '4', name: '...', fav: true, done: true},
-  {id: '5', name: '...', fav: false, done: false},
-  {id: '6', name: '...', fav: false, done: false},
-  {id: '7', name: '...', fav: false, done: false},
-  {id: '8', name: '...', fav: false, done: false},
-  {id: '9', name: '...', fav: false, done: false},
-  {id: '10', name: '...', fav: false, done: false},
-  {id: '11', name: '...', fav: false, done: false},
-  {id: '12', name: '...', fav: false, done: false},
-  {id: '13', name: '...', fav: false, done: false},
-  {id: '14', name: '...', fav: false, done: false},
-  {id: '15', name: '...', fav: false, done: false},
+const puzzlesList:PuzzleData[] = [
+  {name: 'SEND+MORE', equation: ["SEND", "+", "MORE", "=", "MONEY"]},
+  {name: 'a+b=c', equation: ["a", "+", "b", "=", "c"]},
+  {name: 'coucou-toi', equation: ["coucou", "-", "toi", "=", "salut"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
 ]
+
+function createPuzzles () : Puzzle[] {
+  const puzzles:Puzzle[] = []
+  let toAdd = 0
+  for (let i in puzzlesList) {
+    const letters:string[] = []
+    const name = puzzlesList[i].name
+    const equation = puzzlesList[i].equation
+    let max = 0
+    for (let j = 0; j < equation.length; j++) {
+      if (!Object.values<string>(OPERATORS).includes(equation[j])
+        && !Object.values<string>(COMPARATORS).includes(equation[j])) {
+        const word = equation[j]
+        const size = word.length
+        max = (max < size + toAdd) ? size + toAdd : max
+        for (let k = 0; k < size; k++) {
+          if (!letters.includes(word[k]))
+            letters.push(word[k])
+        }
+      }
+      if (Object.values<string>(OPERATORS).includes(equation[j])) {
+        toAdd = 2
+      } else {
+        toAdd = 0
+      }
+    }
+    puzzles.push({name, equation, max, letters, fav:false, done:false})
+  }
+  return puzzles
+}
+
+const puzzles = createPuzzles()
 
 export default puzzles;

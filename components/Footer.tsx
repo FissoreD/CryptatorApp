@@ -15,34 +15,17 @@ interface Props {
   selectedColor: string,
   setSelectedColor: React.Dispatch<React.SetStateAction<string>>,
   selectedTool: string,
-  setSelectedTool: React.Dispatch<React.SetStateAction<string>>
+  setSelectedTool: React.Dispatch<React.SetStateAction<string>>,
+  onPressNumber: any,
+  onPressTool: any,
+  onLayout?:any;
 }
 
 const Footer = (props: Props) => {
   const { selectedTool, setSelectedTool } = props;
   const { selectedColor, setSelectedColor } = props;
   const { width, doneNumbers, setDoneNumbers, selectedNumbers, setSelectedNumbers } = props;
-
-  const onPressNumber = async (number: string) => {
-    if (selectedTool === TOOLS.PEN) {
-      // selection of only one number
-      setSelectedNumbers([number])
-    } else if (selectedTool === TOOLS.PENCIL) {
-      // selection of many numbers
-      setSelectedNumbers(e => [...e, number])
-    } else if (selectedTool === TOOLS.BUCKET) {
-      // No more selected numbers
-      setSelectedNumbers([""])
-    }
-    console.log(number)
-  };
-
-  const onPressTool = async (tool: string) => {
-    if (selectedTool !== tool) {
-      setSelectedNumbers([""])
-    }
-    console.log(tool)
-  };
+  const { onPressNumber, onPressTool } = props;
 
   const above = (selectedTool === TOOLS.BUCKET) ? 
     <ColorFooter width={width} {...{ selectedColor, setSelectedColor }} /> : 
@@ -51,7 +34,7 @@ const Footer = (props: Props) => {
       <View></View> ;
 
   return (
-    <View style = {styles.footer}>
+    <View style = {styles.footer} onLayout = {props.onLayout}>
       {above}
       <ToolsFooter {...{ onPressTool, selectedTool, setSelectedTool }}/>
     </View>
