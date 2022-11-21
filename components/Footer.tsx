@@ -4,6 +4,7 @@ import styles from './style';
 import NumbersFooter from '../components/NumbersFooter';
 import ColorFooter from '../components/ColorFooter';
 import ToolsFooter from '../components/ToolsFooter';
+import { TOOLS } from './constants';
 
 interface Props {
   width: number,
@@ -23,13 +24,13 @@ const Footer = (props: Props) => {
   const { width, doneNumbers, setDoneNumbers, selectedNumbers, setSelectedNumbers } = props;
 
   const onPressNumber = async (number: string) => {
-    if (selectedTool === "pen") {
+    if (selectedTool === TOOLS.PEN) {
       // selection of only one number
       setSelectedNumbers([number])
-    } else if (selectedTool === "pencil") {
+    } else if (selectedTool === TOOLS.PENCIL) {
       // selection of many numbers
       setSelectedNumbers(e => [...e, number])
-    } else if (selectedTool === "bucket") {
+    } else if (selectedTool === TOOLS.BUCKET) {
       // No more selected numbers
       setSelectedNumbers([""])
     }
@@ -43,9 +44,11 @@ const Footer = (props: Props) => {
     console.log(tool)
   };
 
-  const above = (selectedTool === "bucket") ? 
+  const above = (selectedTool === TOOLS.BUCKET) ? 
     <ColorFooter width={width} {...{ selectedColor, setSelectedColor }} /> : 
-    <NumbersFooter width = {width} {...{ onPressNumber, doneNumbers, setDoneNumbers, selectedNumbers, setSelectedNumbers }} />;
+    (selectedTool === TOOLS.PEN || selectedTool === TOOLS.PENCIL) ? 
+      <NumbersFooter width = {width} {...{ onPressNumber, doneNumbers, setDoneNumbers, selectedNumbers, setSelectedNumbers }} /> : 
+      <View></View> ;
 
   return (
     <View style = {styles.footer}>

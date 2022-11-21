@@ -7,7 +7,7 @@ interface IconProps {
   name: string,
   print: string,
   flexBasis: string,
-  onPress: any,
+  onPress?: any,
   selectedItem: any,
   setSelectedItem: React.Dispatch<React.SetStateAction<any>>,
 }
@@ -27,7 +27,7 @@ const ClickableIcon = (props: IconProps) => {
   });
 
   const activeColor = React.useMemo(
-    () => (props.name === selectedItem ? 'black' : colors.color),
+    () => (props.name === selectedItem ? colors.black : colors.color),
     [props.name, selectedItem]
   );
 

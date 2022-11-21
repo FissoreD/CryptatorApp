@@ -4,6 +4,7 @@ import {ClickableOnceIcon} from './Bouton';
 import { Icon } from 'react-native-elements'
 import styles from './style';
 import colors from './colors';
+import { TOOLS } from './constants';
 
 interface Props {
   title: string;
@@ -15,7 +16,7 @@ const Header: React.FC<Props> = ({title, width, right}) => {
   let rightElem = <View style={styles.headerRight} />
   if (right) {
     rightElem = <View style={styles.headerRight}>
-      <ClickableOnceIcon name='lightbulb' print='hint' flexBasis='100%' {...{ selectedItem, setSelectedItem }} />
+      <ClickableOnceIcon name = {TOOLS.HINT} print = 'hint' flexBasis = '100%' {...{ selectedItem, setSelectedItem }} />
     </View>
   }
 

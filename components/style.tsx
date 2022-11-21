@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import colors from './colors';
+import { HEADER_HEIGHT, FOOTER_HEIGHT, CIRCLE_SIZE, BORDER_SIZE } from './constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
   },
   header: {
     width: '100%',
-    height: 100,
+    height: HEADER_HEIGHT,
     borderBottomWidth: 1,
     borderBottomColor: colors.black,
     flexWrap: 'wrap',
@@ -63,11 +64,11 @@ const styles = StyleSheet.create({
     width: '100%',
     flexWrap: 'wrap',
     position: 'absolute',
-    bottom: 110
+    bottom: FOOTER_HEIGHT + 10
   },
   footer: {
     width: '100%',
-    height: 100,
+    height: FOOTER_HEIGHT,
     borderTopWidth: 1,
     borderColor: '#000',
     flexWrap: 'wrap',
@@ -106,10 +107,10 @@ const styles = StyleSheet.create({
     flexBasis: '25%',
   },
   circle: {
-    height: 60,
-    width: 60,
-    borderWidth: 2,
-    borderRadius: 30,
+    height: CIRCLE_SIZE,
+    width: CIRCLE_SIZE,
+    borderWidth: BORDER_SIZE,
+    borderRadius: CIRCLE_SIZE/2,
   }
 });
 

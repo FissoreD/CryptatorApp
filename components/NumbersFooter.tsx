@@ -15,12 +15,13 @@ interface Props {
 const NumbersFooter = (props: Props) => {
   const { selectedNumbers, setSelectedNumbers, width } = props;
   const { doneNumbers, setDoneNumbers, onPressNumber } = props;
-  const size = width/5 - 10
+  const pad = 5;
+  const size = width/5 - 2*pad
   const numbers = []
   for (let i=1; i <= 10; i++) {
     const val = i%10;
     numbers.push(
-      <View key = {i} style = {{padding: 5}}>
+      <View key = {i} style = {{padding: pad}}>
         <Number name = {String(val)} selected = {false} done = {false} 
           style = {{height: size, width : size, borderRadius:size/2}}
           {...{ onPressNumber, doneNumbers, setDoneNumbers, selectedNumbers, setSelectedNumbers }}/>

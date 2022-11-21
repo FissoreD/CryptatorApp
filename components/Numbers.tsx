@@ -30,7 +30,6 @@ const Number = (props: NumberProps) => {
   }
 
   const onPlay = async () => {
-    console.log("+ In numbers")
     props.onPressNumber(props.name);
   };
 

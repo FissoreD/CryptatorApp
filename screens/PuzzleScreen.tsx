@@ -10,9 +10,26 @@ function PuzzleScreen({ route, navigation }: Props) {
   const { width } = useWindowDimensions();
   const [selectedNumbers, setSelectedNumbers] = React.useState<string[]>([empty]);
   const [doneNumbers, setDoneNumbers] = React.useState<string[]>([empty]);
-  const [selectedColor, setSelectedColor] = React.useState<string>("none");
-  const [selectedTool, setSelectedTool] = React.useState<string>("pen");
+  const [selectedColor, setSelectedColor] = React.useState<string>("");
+  const [selectedTool, setSelectedTool] = React.useState<string>("");
   // const { id } = route.params;
+
+  const onPressLetter = async (letter: string) => {
+    if (selectedTool === "pen") {
+      if (selectedNumbers.length > 0) {
+        // replace the letter with the selected number
+      }
+    } else if (selectedTool === "pencil") {
+      if (selectedNumbers.length > 0) {
+        // annotate the letter with the selected numbers
+      }
+    } else if (selectedTool === "bucket") {
+      if (selectedColor !== "none") {
+        // color the letter with the selected color
+      }
+    }
+    console.log(letter)
+  }
 
   return(
     <SafeAreaView style={styles.container}>
