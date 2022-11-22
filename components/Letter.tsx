@@ -15,14 +15,19 @@ interface LetterProps {
 }
 
 export const Letter = (props: {name: string, style?: any}) => {
+  const dispatch = useAppDispatch()
 
   const style = [styles.letter, styles.center];
   if (props.style) {
     style.push(props.style)
   }
 
+  const onPlay = async () => {
+    dispatch(changeLetter(""));
+  };
+
   return (
-    <Pressable style = {[styles.center, {borderWidth: 2, borderColor: colors.none}]}>
+    <Pressable style = {[styles.center, {borderWidth: 2, borderColor: colors.none}]} onPress={onPlay}>
       <Text style = {[style, {textAlign:"center", textAlignVertical: "center", color: colors.lightgray}]}>{props.name}</Text>
     </Pressable>
   );
@@ -63,7 +68,7 @@ const PressableLetter = (props: LetterProps) => {
 
   return (
     <Pressable style = {[styles.center, {borderWidth: 2, borderColor: activeBorder}]} onPress={onPlay}>
-      <Text style = {[style, {textAlign: "center", textAlignVertical: "center", color: colors.lightgray}]}>{props.name}</Text>
+      <Text style = {[style, {textAlign: "center", textAlignVertical: "center", color: activeColor}]}>{props.name}</Text>
     </Pressable>
   );
 };

@@ -3,13 +3,12 @@ import { StyleSheet, View } from 'react-native';
 import styles from './style';
 import { OPERATORS, COMPARATORS, COLOR_NONE } from './constants';
 import PressableLetter, { Letter } from './Letter'
-
+import { useAppSelector } from '../app/hooks';
 
 interface PuzzleProps {
   equation: string[];
   max: number;
   onPressLetter: any,
-  letters: string[],
   onLayout?:any;
 }
 
@@ -17,7 +16,8 @@ const Puzzle = (props: PuzzleProps) => {
   const components = [];
   let done = false
   const equation = props.equation;
-  const { onPressLetter, letters, max } = props
+  const { onPressLetter, max } = props
+  const letters = useAppSelector((state) => state.letter.letters)
 
   const localStyle = StyleSheet.create({
     row: {

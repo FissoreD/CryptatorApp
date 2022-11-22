@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, useWindowDimensions } from 'react-native';
+import { Pressable, SafeAreaView, useWindowDimensions } from 'react-native';
 import styles from '../components/style';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -11,7 +11,7 @@ import { useAppSelector, useAppDispatch } from '../app/hooks';
 import { changeColor } from '../features/colorSlice'
 import { clearSelected, setSelected, setSelectedArray, addSelected, removeSelected, 
   clearDone, setDone, setDoneArray, addDone, removeDone  } from '../features/numberSlice'
-import { changeLetter, setLetterColor } from '../features/letterSlice'
+import { changeLetter, setLetterColor, setLetters, setName } from '../features/letterSlice'
 
 function PuzzleScreen({ route, navigation }: Props) {
   const { height, width } = useWindowDimensions();
@@ -21,15 +21,20 @@ function PuzzleScreen({ route, navigation }: Props) {
   const doneNumbers = useAppSelector((state) => state.number.done)
   const selectedTool = useAppSelector((state) => state.tool.value)
   const selectedLetter = useAppSelector((state) => state.letter.value)
+  const name = useAppSelector((state) => state.letter.name)
   const dispatch = useAppDispatch()
-
-  var lettersColor: string[] = [];
 
   const { index } = route.params;
   const puzzle = puzzles[index];
 
-  for (let i in puzzle.letters) {
-    lettersColor.push(COLOR_NONE)
+  if (name !== puzzle.name) {
+    console.log("+ The letters are " + puzzle.letters)
+    dispatch(setName(puzzle.name))
+    dispatch(setLetters(puzzle.letters))
+
+    for (let i in puzzle.letters) {
+      dispatch(setLetterColor({number: Number(i), value: COLOR_NONE}))
+    }
   }
 
   const onPressLetter = async (letter: string) => {
@@ -86,9 +91,17 @@ function PuzzleScreen({ route, navigation }: Props) {
 
   return(
     <SafeAreaView style={styles.container}>
-      <Header title = "Cryptator" width = {width} right = {true}/>
-      <Puzzle equation = {puzzle.equation} max = {puzzle.max} letters = {puzzle.letters} {...{onPressLetter, lettersColor}} />
-      <Footer {...{width, onPressNumber, onPressTool}} />
+      <Pressable
+        style = {[styles.full]}
+        onPress={() => {
+            dispatch(changeLetter(""))
+          }
+        }
+      >
+        <Header title = "Cryptator" width = {width} right = {true}/>
+        <Puzzle equation = {puzzle.equation} max = {puzzle.max} {...{onPressLetter}} />
+        <Footer {...{width, onPressNumber, onPressTool}} />
+      </Pressable>
     </SafeAreaView>
   );
 };

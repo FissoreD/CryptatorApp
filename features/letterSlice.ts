@@ -10,12 +10,16 @@ export type letterColorType = {
 // Define a type for the slice state
 interface LetterState {
   value: string,
+  name: string,
+  letters: string[],
   lettersColor: string[]
 }
 
 // Define the initial state using that type
 const initialState: LetterState = {
   value: "",
+  name: "",
+  letters: [],
   lettersColor: []
 }
 
@@ -27,13 +31,19 @@ export const letterSlice = createSlice({
     changeLetter: (state, action: PayloadAction<string>) => {
       state.value = action.payload
     },
+    setName: (state, action: PayloadAction<string>) => {
+      state.name = action.payload
+    },
     setLetterColor: (state, action: PayloadAction<letterColorType>) => {
       state.lettersColor[action.payload.number] = action.payload.value
+    },
+    setLetters: (state, action: PayloadAction<string[]>) => {
+      state.letters = action.payload
     },
   },
 })
 
-export const { changeLetter, setLetterColor } = letterSlice.actions
+export const { changeLetter, setLetterColor, setLetters, setName } = letterSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectLetter = (state: RootState) => state.letter.value
