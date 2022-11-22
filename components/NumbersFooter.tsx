@@ -6,15 +6,10 @@ import Number from './Numbers';
 interface Props {
   width: number,
   onPressNumber: any,
-  doneNumbers: string[],
-  setDoneNumbers: React.Dispatch<React.SetStateAction<string[]>>,
-  selectedNumbers: string[],
-  setSelectedNumbers: React.Dispatch<React.SetStateAction<string[]>>,
 }
 
 const NumbersFooter = (props: Props) => {
-  const { selectedNumbers, setSelectedNumbers, width } = props;
-  const { doneNumbers, setDoneNumbers, onPressNumber } = props;
+  const { width, onPressNumber } = props;
   const pad = 5;
   const size = width/5 - 2*pad;
   const numbers = []
@@ -23,7 +18,7 @@ const NumbersFooter = (props: Props) => {
     numbers.push(
       <View key = {i} style = {{padding: pad}}>
         <Number name = {String(val)} style = {{height: size, width : size, borderRadius:size/2}}
-          {...{ onPressNumber, doneNumbers, setDoneNumbers, selectedNumbers, setSelectedNumbers }}/>
+          {...{ onPressNumber}}/>
       </View>);
   }
   return (

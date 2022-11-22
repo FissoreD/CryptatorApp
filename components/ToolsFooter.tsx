@@ -3,15 +3,18 @@ import { View } from 'react-native';
 import styles from './style';
 import { ClickableIcon } from './Bouton';
 import { TOOLS } from './constants';
+import { useAppSelector, useAppDispatch } from '../app/hooks';
+import { changeTool } from '../features/toolSlice'
 
 interface ToolsProps {
   onPressTool: any,
-  selectedTool: string,
-  setSelectedTool: React.Dispatch<React.SetStateAction<string>>
 }
 
 const ToolsFooter = (props: ToolsProps) => {
-  const { selectedTool, setSelectedTool, onPressTool } = props;
+  const { onPressTool } = props;
+  const selectedTool = useAppSelector((state) => state.tool.value)
+  const dispatch = useAppDispatch()
+  const setSelectedTool = (tool:string) => dispatch(changeTool(tool))
   return (
     <View style={styles.footer}>
       <View style={[styles.row, styles.full]}>

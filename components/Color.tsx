@@ -4,17 +4,18 @@ import colors from './colors';
 import styles from './style';
 import Icons from '../font/Cryptator-fontello';
 import { COLOR_NONE, CIRCLE_SIZE, BORDER_SIZE } from './constants';
+import { useAppSelector, useAppDispatch } from '../app/hooks';
+import { changeColor } from '../features/colorSlice'
 
 interface ColorProps {
   color: string,
-  selectedColor: string,
-  setSelectedColor: React.Dispatch<React.SetStateAction<string>>,
   style?: any
   width?: number
 }
 
 const Color = (props: ColorProps) => {
-  const { selectedColor, setSelectedColor } = props;
+  const selectedColor = useAppSelector((state) => state.color.value)
+  const dispatch = useAppDispatch()
 
   const color = (props.color === COLOR_NONE) ? colors.lightgray : props.color;
 
@@ -23,10 +24,10 @@ const Color = (props: ColorProps) => {
     [props.color, selectedColor]
   );
 
-  const backgroundColor = (props.color === COLOR_NONE) ? colors.color : props.color;
+  const backgroundColor = (props.color === COLOR_NONE) ? colors.none : props.color;
 
   const onPlay = async () => {
-    setSelectedColor(props.color);
+    dispatch(changeColor(props.color))
     console.log(props.color)
   };
 

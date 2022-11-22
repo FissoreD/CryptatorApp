@@ -5,38 +5,30 @@ import NumbersFooter from '../components/NumbersFooter';
 import ColorFooter from '../components/ColorFooter';
 import ToolsFooter from '../components/ToolsFooter';
 import { TOOLS } from './constants';
+import { useAppSelector } from '../app/hooks';
 
 interface Props {
   width: number,
-  doneNumbers: string[],
-  setDoneNumbers: React.Dispatch<React.SetStateAction<string[]>>,
-  selectedNumbers: string[],
-  setSelectedNumbers: React.Dispatch<React.SetStateAction<string[]>>,
-  selectedColor: string,
-  setSelectedColor: React.Dispatch<React.SetStateAction<string>>,
-  selectedTool: string,
-  setSelectedTool: React.Dispatch<React.SetStateAction<string>>,
   onPressNumber: any,
   onPressTool: any,
   onLayout?:any;
 }
 
 const Footer = (props: Props) => {
-  const { selectedTool, setSelectedTool } = props;
-  const { selectedColor, setSelectedColor } = props;
-  const { width, doneNumbers, setDoneNumbers, selectedNumbers, setSelectedNumbers } = props;
+  const selectedTool = useAppSelector((state) => state.tool.value)
+  const { width } = props;
   const { onPressNumber, onPressTool } = props;
 
   const above = (selectedTool === TOOLS.BUCKET) ? 
-    <ColorFooter width={width} {...{ selectedColor, setSelectedColor }} /> : 
+    <ColorFooter width={width} /> : 
     (selectedTool === TOOLS.PEN || selectedTool === TOOLS.PENCIL) ? 
-      <NumbersFooter width = {width} {...{ onPressNumber, doneNumbers, setDoneNumbers, selectedNumbers, setSelectedNumbers }} /> : 
+      <NumbersFooter width = {width} {...{ onPressNumber }} /> : 
       <View></View> ;
 
   return (
     <View style = {styles.footer} onLayout = {props.onLayout}>
       {above}
-      <ToolsFooter {...{ onPressTool, selectedTool, setSelectedTool }}/>
+      <ToolsFooter {...{ onPressTool }}/>
     </View>
   )
 }

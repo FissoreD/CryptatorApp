@@ -9,10 +9,7 @@ interface PuzzleProps {
   equation: string[];
   max: number;
   onPressLetter: any,
-  selectedLetter: string,
-  setSelectedLetter: React.Dispatch<React.SetStateAction<string>>,
   letters: string[],
-  lettersColor: string[],
   onLayout?:any;
 }
 
@@ -20,8 +17,7 @@ const Puzzle = (props: PuzzleProps) => {
   const components = [];
   let done = false
   const equation = props.equation;
-  const { onPressLetter, selectedLetter, setSelectedLetter } = props
-  const { letters, lettersColor, max } = props
+  const { onPressLetter, letters, max } = props
 
   const localStyle = StyleSheet.create({
     row: {
@@ -57,18 +53,20 @@ const Puzzle = (props: PuzzleProps) => {
         </View>);
     } else {
       const toAddletters = [];
+      let size = max
       if (operator !== "") {
         toAddletters.push(<Letter key = {key} name = {operator} style = {localStyle.letter}/>);
         key++
         toAddletters.push(<Letter key = {key} name = "" style = {localStyle.letter}/>);
         key++
+        size -= 2
       }
-      for (let j = 0; j < equation[i].length - max; j++) {
+      for (let j = 0; j <size - equation[i].length ; j++) {
         toAddletters.push(<Letter key = {key} name = "" style = {localStyle.letter}/>);
         key++
       }
       for (let j = 0; j < equation[i].length; j++) {
-        toAddletters.push(<PressableLetter key = {key} name = {equation[i].charAt(j)} {...{letters, lettersColor, onPressLetter, selectedLetter, setSelectedLetter}}  style = {localStyle.letter} />);
+        toAddletters.push(<PressableLetter key = {key} name = {equation[i].charAt(j)} {...{letters, onPressLetter}}  style = {localStyle.letter} />);
         key++
       }
       components.push(

@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import { Pressable, Text } from 'react-native';
 import colors from './colors';
 import styles from './style';
-import { COLOR_NONE } from './constants'
+import { COLOR_NONE, TOOLS } from './constants'
+import { useAppSelector, useAppDispatch } from '../app/hooks';
+import { changeLetter, setLetterColor } from '../features/letterSlice'
 
 interface LetterProps {
   name: string,
   print?: string,
   onPressLetter: any,
-  selectedLetter: string,
-  setSelectedLetter: React.Dispatch<React.SetStateAction<string>>,
   letters: string[],
-  lettersColor: string[],
   style?: any
 }
 
@@ -30,7 +29,11 @@ export const Letter = (props: {name: string, style?: any}) => {
 };
 
 const PressableLetter = (props: LetterProps) => {
-  const { selectedLetter, setSelectedLetter } = props;
+  const selectedLetter = useAppSelector((state) => state.letter.value)
+  const lettersColor = useAppSelector((state) => state.letter.lettersColor)
+  const selectedTool = useAppSelector((state) => state.tool.value)
+  const selectedColor = useAppSelector((state) => state.color.value)
+  const dispatch = useAppDispatch()
 
   const [ annotations, setAnnotations ] = useState([""]); 
   const [ value, setValue ] = useState(""); 
@@ -44,13 +47,16 @@ const PressableLetter = (props: LetterProps) => {
 
   const activeBorder = (selectedLetter === props.name) ? colors.black : colors.none;
   const pos = props.letters.indexOf(props.name)
-  const activeColor =  (pos >= 0 && props.lettersColor[pos] !== COLOR_NONE) ? props.lettersColor[pos] : colors.lightgray;
+  const activeColor =  (pos >= 0 && lettersColor[pos] !== COLOR_NONE) ? lettersColor[pos] : colors.lightgray;
 
   const onPlay = async () => {
     if (selectedLetter === props.name) {
-      setSelectedLetter("");
+      dispatch(changeLetter(""));
     } else {
-      setSelectedLetter(props.name);
+      dispatch(changeLetter(props.name));
+      if (selectedTool === TOOLS.BUCKET) {
+        dispatch(setLetterColor({number: pos, value: selectedColor}));
+      }
       props.onPressLetter(props.name);
     }
   };

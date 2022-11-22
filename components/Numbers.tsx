@@ -2,20 +2,17 @@ import React, { useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import colors from './colors';
 import styles from './style';
+import { useAppSelector } from '../app/hooks';
 
 interface NumberProps {
   name: string,
   onPressNumber: any,
-  selectedNumbers: string[],
-  setSelectedNumbers: React.Dispatch<React.SetStateAction<string[]>>,
-  doneNumbers: string[],
-  setDoneNumbers: React.Dispatch<React.SetStateAction<string[]>>,
   style?: any
 }
 
 const Number = (props: NumberProps) => {
-  const { selectedNumbers, setSelectedNumbers } = props;
-  const { doneNumbers, setDoneNumbers } = props;
+  const selectedNumbers = useAppSelector((state) => state.number.selected)
+  const doneNumbers = useAppSelector((state) => state.number.done)
 
   const activeColor = doneNumbers.includes(props.name) ? colors.lightgray : selectedNumbers.includes(props.name) ? colors.color : colors.black;
   const activeBackgroundColor = selectedNumbers.includes(props.name) ? colors.black : colors.none;
