@@ -9,7 +9,6 @@ import { changeLetter, setLetterColor } from '../features/letterSlice'
 interface LetterProps {
   name: string,
   print?: string,
-  onPressLetter: any,
   letters: string[],
   style?: any
 }
@@ -62,7 +61,6 @@ const PressableLetter = (props: LetterProps) => {
       if (selectedTool === TOOLS.BUCKET) {
         dispatch(setLetterColor({number: pos, value: selectedColor}));
       }
-      props.onPressLetter(props.name);
     }
   };
 

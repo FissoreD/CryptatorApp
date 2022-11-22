@@ -8,7 +8,6 @@ import { useAppSelector } from '../app/hooks';
 interface PuzzleProps {
   equation: string[];
   max: number;
-  onPressLetter: any,
   onLayout?:any;
 }
 
@@ -16,7 +15,7 @@ const Puzzle = (props: PuzzleProps) => {
   const components = [];
   let done = false
   const equation = props.equation;
-  const { onPressLetter, max } = props
+  const { max } = props
   const letters = useAppSelector((state) => state.letter.letters)
 
   const localStyle = StyleSheet.create({
@@ -66,7 +65,7 @@ const Puzzle = (props: PuzzleProps) => {
         key++
       }
       for (let j = 0; j < equation[i].length; j++) {
-        toAddletters.push(<PressableLetter key = {key} name = {equation[i].charAt(j)} {...{letters, onPressLetter}}  style = {localStyle.letter} />);
+        toAddletters.push(<PressableLetter key = {key} name = {equation[i].charAt(j)} letters = {letters}  style = {localStyle.letter} />);
         key++
       }
       components.push(

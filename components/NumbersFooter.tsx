@@ -5,11 +5,10 @@ import Number from './Numbers';
 
 interface Props {
   width: number,
-  onPressNumber: any,
 }
 
 const NumbersFooter = (props: Props) => {
-  const { width, onPressNumber } = props;
+  const { width } = props;
   const pad = 5;
   const size = width/5 - 2*pad;
   const numbers = []
@@ -17,8 +16,7 @@ const NumbersFooter = (props: Props) => {
     const val = i%10;
     numbers.push(
       <View key = {i} style = {{padding: pad}}>
-        <Number name = {String(val)} style = {{height: size, width : size, borderRadius:size/2}}
-          {...{ onPressNumber}}/>
+        <Number name = {String(val)} style = {{height: size, width : size, borderRadius:size/2}} />
       </View>);
   }
   return (
