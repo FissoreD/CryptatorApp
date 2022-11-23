@@ -257,6 +257,8 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
     implementation files('libs/cryptator-0.5.0-SNAPSHOT-with-dependencies.jar')
     
+    //  Duplicate class javax.annotation.meta.TypeQualifierValidator found in modules jetified-cryptator-0.5.0-SNAPSHOT-with-dependencies (cryptator-0.5.0-SNAPSHOT-with-dependencies.jar) and jetified-jsr305-3.0.2 (com.google.code.findbugs:jsr305:3.0.2)
+    
     // implementation 'org.choco-solver:choco-solver:4.10.6'
     // implementation files('libs/cryptator-0.5.0-SNAPSHOT.jar')
 
@@ -324,4 +326,9 @@ task wrapper(type: Wrapper) {
     gradleVersion = '6.7.1'
 }
 task prepareKotlinBuildScriptModel {
+}
+
+configurations.all {
+    // We don't want to pull in this, ever. Dropwizard uses ch.qos.logback:logback-core
+    exclude group: 'org.slf4j', module: 'slf4j-log4j12'
 }
