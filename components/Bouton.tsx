@@ -12,10 +12,17 @@ interface IconProps {
   setSelectedItem: React.Dispatch<React.SetStateAction<any>>,
 }
 
+import { NativeModules } from 'react-native';
+
+// const { CalendarModule } = NativeModules;
+
+// CalendarModule.createCalendarEvent('testName', 'testLocation');
+
+
 const ClickableIcon = (props: IconProps) => {
   const { selectedItem, setSelectedItem } = props;
   const style = StyleSheet.create({
-    item:{
+    item: {
       display: 'flex',
       flexBasis: props.flexBasis,
       height: '100%',
@@ -39,19 +46,26 @@ const ClickableIcon = (props: IconProps) => {
   const onPlay = async () => {
     setSelectedItem(props.name);
     props.onPress(props.name);
+    console.log({ NativeModules });
+    const { CalendarModule } = NativeModules;
+    console.log(CalendarModule);
+    console.log(CalendarModule.createCalendarEvent('testName', 'testLocation'));
+    let t = "";
+    CalendarModule.getTime(function (e: string) { t = e; console.log(e + " hi") })
+    console.log(t);
     console.log(props.print)
   };
 
   return (
-    <Pressable onPress={onPlay} style={[style.item, {backgroundColor: activeBackgroundColor}]}>
-      <Icons name={props.name} size={80} style={{color: activeColor}} />
+    <Pressable onPress={onPlay} style={[style.item, { backgroundColor: activeBackgroundColor }]}>
+      <Icons name={props.name} size={80} style={{ color: activeColor }} />
     </Pressable>
   );
 };
 
 const ClickableOnceIcon = (props: IconProps) => {
   const style = StyleSheet.create({
-    item:{
+    item: {
       display: 'flex',
       flexBasis: props.flexBasis,
       height: '100%',
@@ -68,9 +82,9 @@ const ClickableOnceIcon = (props: IconProps) => {
 
   return (
     <TouchableOpacity onPress={onPlay} style={style.item}>
-      <Icons name={props.name} size={80} style={{color: colors.color}} />
+      <Icons name={props.name} size={80} style={{ color: colors.color }} />
     </TouchableOpacity>
   );
 };
 
-export {ClickableIcon, ClickableOnceIcon};
+export { ClickableIcon, ClickableOnceIcon };
