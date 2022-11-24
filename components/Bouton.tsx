@@ -8,12 +8,15 @@ interface IconProps {
   name: string,
   print: string,
   flexBasis: string,
-  onPress: (tool: string | number) => void,
   selectedItem: string,
-  setSelectedItem: any,
+  setSelectedItem: (newName: string) => void
 }
 
-const ClickableIcon = (props: IconProps) => {
+interface ClickableIconProp extends IconProps {
+  onPress: (tool: string) => void,
+}
+
+const ClickableIcon = (props: ClickableIconProp) => {
   const { selectedItem, setSelectedItem } = props;
 
   const style = StyleSheet.create({
@@ -51,7 +54,11 @@ const ClickableIcon = (props: IconProps) => {
   );
 };
 
-const ClickableOnceIcon = (props: any) => {
+interface ClickableOnceIconProp extends IconProps {
+  onPress: (tool: number) => void
+}
+
+const ClickableOnceIcon = (props: ClickableOnceIconProp) => {
   let puzzleId = useAppSelector((state) => state.solver.cryptarithmIndex)
 
   const style = StyleSheet.create({

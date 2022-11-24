@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, LayoutChangeEvent } from 'react-native';
 import { ClickableOnceIcon } from './Bouton';
 import { Icon } from 'react-native-elements'
 import styles from './style';
@@ -11,7 +11,7 @@ import createHintMessage from './buttonListener/HintListener';
 interface Props {
   title: string;
   right?: boolean;
-  onLayout?: any;
+  onLayout?: ((event: LayoutChangeEvent) => void)
 }
 const Header: React.FC<Props> = ({ title, right, onLayout }) => {
   const [selectedItem, setSelectedItem] = React.useState("");
