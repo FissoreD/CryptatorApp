@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import React from 'react';
+import { Pressable, Text, StyleProp, ViewStyle } from 'react-native';
 import colors from './colors';
 import styles from './style';
 import { TOOLS } from './constants';
 import { useAppSelector, useAppDispatch } from '../app/hooks';
-import { clearSelected, setSelected, setSelectedArray, addSelected, removeSelected, 
-  clearDone, setDone, setDoneArray, addDone, removeDone  } from '../features/numberSlice'
+import { clearSelected, setSelected, addSelected, removeSelected } from '../features/numberSlice'
 
 interface NumberProps {
   name: string,
-  style?: any
+  style?: StyleProp<ViewStyle>
 }
 
 const Number = (props: NumberProps) => {
@@ -22,7 +21,7 @@ const Number = (props: NumberProps) => {
   const activeBackgroundColor = selectedNumbers.includes(props.name) ? colors.black : colors.none;
   const activeBorderColor = doneNumbers.includes(props.name) ? colors.lightgray : colors.black;
 
-  const style = [styles.circle, styles.center, {borderColor: activeBorderColor, backgroundColor: activeBackgroundColor}];
+  const style: StyleProp<ViewStyle>[] = [styles.circle, styles.center, {borderColor: activeBorderColor, backgroundColor: activeBackgroundColor}];
   if (props.style) {
     style.push(props.style)
   }

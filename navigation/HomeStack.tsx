@@ -1,7 +1,6 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import puzzles from './puzzlesList';
 import { RootStackParamList } from './types'
 import HomeScreen from '../screens/HomeScreen';
 import MenuScreen from '../screens/MenuScreen';

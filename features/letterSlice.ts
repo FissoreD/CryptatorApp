@@ -2,11 +2,6 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../app/store'
 
-export type letterColorType = {
-  number: number, 
-  value: string
-}
-
 // Define a type for the slice state
 interface LetterState {
   value: string,
@@ -34,7 +29,7 @@ export const letterSlice = createSlice({
     setName: (state, action: PayloadAction<string>) => {
       state.name = action.payload
     },
-    setLetterColor: (state, action: PayloadAction<letterColorType>) => {
+    setLetterColor: (state, action: PayloadAction<{number: number, value: string}>) => {
       state.lettersColor[action.payload.number] = action.payload.value
     },
     setLetters: (state, action: PayloadAction<string[]>) => {

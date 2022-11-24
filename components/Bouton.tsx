@@ -8,8 +8,8 @@ interface IconProps {
   print: string,
   flexBasis: string,
   onPress?: any,
-  selectedItem: any,
-  setSelectedItem: React.Dispatch<React.SetStateAction<any>>,
+  selectedItem: string,
+  setSelectedItem: any,
 }
 
 import { NativeModules } from 'react-native';

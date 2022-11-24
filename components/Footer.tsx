@@ -8,18 +8,16 @@ import { TOOLS } from './constants';
 import { useAppSelector } from '../app/hooks';
 
 interface Props {
-  width: number,
   onLayout?:any;
 }
 
 const Footer = (props: Props) => {
   const selectedTool = useAppSelector((state) => state.tool.value)
-  const { width } = props;
 
   const above = (selectedTool === TOOLS.BUCKET) ? 
-    <ColorFooter width={width} /> : 
+    <ColorFooter /> : 
     (selectedTool === TOOLS.PEN || selectedTool === TOOLS.PENCIL) ? 
-      <NumbersFooter width = {width} /> : 
+      <NumbersFooter /> : 
       <View></View> ;
 
   return (

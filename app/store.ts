@@ -3,6 +3,7 @@ import toolReducer from '../features/toolSlice'
 import colorReducer from '../features/colorSlice'
 import numberReducer from '../features/numberSlice'
 import letterReducer from '../features/letterSlice'
+import windowReducer from '../features/windowSlice'
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     color: colorReducer,
     number: numberReducer,
     letter: letterReducer,
+    window: windowReducer,
   },
 })
 

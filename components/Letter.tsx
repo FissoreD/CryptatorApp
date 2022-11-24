@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pressable, Text } from 'react-native';
+import { Pressable, Text, StyleProp, ViewStyle } from 'react-native';
 import colors from './colors';
 import styles from './style';
 import { COLOR_NONE, TOOLS } from './constants'
@@ -10,7 +10,7 @@ interface LetterProps {
   name: string,
   print?: string,
   letters: string[],
-  style?: any
+  style?: StyleProp<ViewStyle>
 }
 
 export const Letter = (props: {name: string, style?: any}) => {
@@ -44,7 +44,7 @@ const PressableLetter = (props: LetterProps) => {
   const [ color, setColor ] = useState(""); 
 
 
-  const style = [styles.letter];
+  const style: StyleProp<ViewStyle>[] = [styles.letter];
   if (props.style) {
     style.push(props.style)
   }
