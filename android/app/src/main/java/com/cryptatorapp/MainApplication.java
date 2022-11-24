@@ -13,11 +13,7 @@ import com.facebook.react.config.ReactFeatureFlags;
 import com.facebook.soloader.SoLoader;
 import com.cryptatorapp.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-
-import cryptator.solver.CryptaBignumModeler;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -33,7 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
-            packages.add(new MyAppPackage());
+            packages.add(new CryptatorPackage());
             Log.d("Print me", "Prinf me");
           return packages;
         }

@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class MyAppPackage implements ReactPackage {
+public class CryptatorPackage implements ReactPackage {
 
     @NonNull
     @Override
@@ -25,7 +25,7 @@ public class MyAppPackage implements ReactPackage {
             @NonNull ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        modules.add(new CalendarModule(reactContext));
+        modules.add(new CryptatorModule(reactContext));
 
         return modules;
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Pressable, TouchableOpacity, StyleSheet } from 'react-native';
 import colors from './colors';
 import Icons from '../font/Cryptator-fontello';
+import { getSolutions } from '../backend/nativeModules';
 
 interface IconProps {
   name: string,
@@ -11,8 +12,6 @@ interface IconProps {
   selectedItem: string,
   setSelectedItem: any,
 }
-
-import { NativeModules } from 'react-native';
 
 // const { CalendarModule } = NativeModules;
 
@@ -46,13 +45,7 @@ const ClickableIcon = (props: IconProps) => {
   const onPlay = async () => {
     setSelectedItem(props.name);
     props.onPress(props.name);
-    console.log({ NativeModules });
-    const { CalendarModule } = NativeModules;
-    console.log(CalendarModule);
-    console.log(CalendarModule.createCalendarEvent('testName', 'testLocation'));
-    let t = "";
-    CalendarModule.getTime(function (e: string) { t = e; console.log(e + " hi") })
-    console.log(t);
+    console.log(getSolutions());
     console.log(props.print)
   };
 
