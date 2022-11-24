@@ -2,24 +2,20 @@ import React from 'react';
 import { Pressable, TouchableOpacity, StyleSheet } from 'react-native';
 import colors from './colors';
 import Icons from '../font/Cryptator-fontello';
-import { getSolutions } from '../backend/nativeModules';
+import { useAppSelector } from '../app/hooks';
 
 interface IconProps {
   name: string,
   print: string,
   flexBasis: string,
-  onPress?: any,
+  onPress: (tool: string | number) => void,
   selectedItem: string,
   setSelectedItem: any,
 }
 
-// const { CalendarModule } = NativeModules;
-
-// CalendarModule.createCalendarEvent('testName', 'testLocation');
-
-
 const ClickableIcon = (props: IconProps) => {
   const { selectedItem, setSelectedItem } = props;
+
   const style = StyleSheet.create({
     item: {
       display: 'flex',
@@ -45,7 +41,6 @@ const ClickableIcon = (props: IconProps) => {
   const onPlay = async () => {
     setSelectedItem(props.name);
     props.onPress(props.name);
-    console.log(getSolutions());
     console.log(props.print)
   };
 
@@ -56,7 +51,9 @@ const ClickableIcon = (props: IconProps) => {
   );
 };
 
-const ClickableOnceIcon = (props: IconProps) => {
+const ClickableOnceIcon = (props: any) => {
+  let puzzleId = useAppSelector((state) => state.solver.cryptarithmIndex)
+
   const style = StyleSheet.create({
     item: {
       display: 'flex',
@@ -70,6 +67,7 @@ const ClickableOnceIcon = (props: IconProps) => {
   });
 
   const onPlay = async () => {
+    await props.onPress(puzzleId)
     console.log(props.print)
   };
 

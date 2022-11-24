@@ -3,6 +3,7 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../app/store'
 import { TOOLS } from '../components/constants'
 import { getSolutions } from '../backend/nativeModules';
+import puzzles from '../navigation/puzzlesList';
 
 interface CryptatorConfigState {
   solutionLimit?: number;
@@ -28,7 +29,8 @@ interface CryptatorConfigState {
 
 interface CryptatorState {
   config: Required<CryptatorConfigState>,
-  solution: string
+  solution: string,
+  cryptarithmIndex: number
 }
 
 const initialConfig: Required<CryptatorConfigState> = {
@@ -56,10 +58,11 @@ const initialConfig: Required<CryptatorConfigState> = {
 // Define the initial state using that type
 const initialState: Required<CryptatorState> = {
   config: { ...initialConfig },
-  solution: ""
+  solution: "",
+  cryptarithmIndex: 0
 }
 
-export const cryptatorConfigSlice = createSlice({
+export const cryptatorConfigSlice: Slice<CryptatorState> = createSlice({
   name: 'cryptatorConfig',
 
   initialState: { ...initialState },
@@ -76,13 +79,13 @@ export const cryptatorConfigSlice = createSlice({
         state[k] = initialState[k];
       }
     },
-    solve: (state) => {
-      state.solution = getSolutions()
+    setCryptarithm: (state, action: PayloadAction<number>) => {
+      state.cryptarithmIndex = action.payload
     }
   },
 })
 
-export const { setConfig, resetConfig, solve } = cryptatorConfigSlice.actions
+export const { setConfig, resetConfig, solve, setCryptarithm } = cryptatorConfigSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectTool = (state: RootState) => state.tool.value

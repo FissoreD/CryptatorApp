@@ -1,33 +1,28 @@
 package com.cryptatorapp;
 
-import static cryptator.tree.TreeUtils.writeInorder;
-
-import com.facebook.react.bridge.Callback;
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
-import android.util.Log;
-
-import cryptator.config.CryptaConfig;
-import cryptator.parser.CryptaParserWrapper;
+import cryptator.CryptaJson;
+import cryptator.config.CryptatorConfig;
+import cryptator.json.SolveInput;
+import cryptator.json.SolveOutput;
 import cryptator.solver.CryptaModelException;
-import cryptator.solver.CryptaSolver;
 import cryptator.solver.CryptaSolverException;
-import cryptator.specs.ICryptaEvaluation;
-import cryptator.specs.ICryptaNode;
-import cryptator.specs.ICryptaParser;
-import cryptator.specs.ICryptaSolver;
-import cryptator.tree.CryptaEvaluation;
-import cryptator.tree.CryptaEvaluationException;
 
 
 public class CryptatorModule extends ReactContextBaseJavaModule {
+    private final CryptatorConfig config = new CryptatorConfig();
+    private final ObjectMapper mapper = new ObjectMapper();
+
     CryptatorModule(ReactApplicationContext context) {
         super(context);
-        Log.d("Ciao", "ciao");
     }
 
     @Override
@@ -35,35 +30,29 @@ public class CryptatorModule extends ReactContextBaseJavaModule {
         return "CryptatorModule";
     }
 
-    @ReactMethod
-    public void createCryptator() {
+    private void buildJsonInput(final Object object, StringBuffer res) throws IOException {
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        mapper.writeValue(out, object);
+        res.append(out);
+        res.append('\n');
+    }
 
+    public void solve(final String cryptarithm, StringBuffer res)
+            throws IOException, CryptaModelException, CryptaSolverException {
+        SolveInput input = new SolveInput(cryptarithm, config);
+        final SolveOutput output = CryptaJson.solve(input);
+        buildJsonInput(output, res);
     }
 
     @ReactMethod
-    public void getSolutions(Callback getSolutions) {
-
-        ICryptaParser p = new CryptaParserWrapper();
-        ICryptaNode sendMoreMoney = p.parse("A + B = C");
-        ICryptaSolver i = new CryptaSolver();
-        ICryptaEvaluation eval = new CryptaEvaluation();
-        CryptaConfig config = new CryptaConfig();
-
+    public void getSolutions(String cryptarithm, Promise getSolutions) {
+        StringBuffer res = new StringBuffer();
         try {
-            i.solve(sendMoreMoney, config,  (s) -> {
-                //System.out.println(s);
-                try {
-                    eval.evaluate(sendMoreMoney, s, config.getArithmeticBase());
-                } catch (CryptaEvaluationException e) {
-                    e.printStackTrace();
-                }});
-        } catch (CryptaModelException | CryptaSolverException e) {
-            e.printStackTrace();
+            solve(cryptarithm, res);
+            getSolutions.resolve(res.toString());
+        } catch (IOException | CryptaModelException | CryptaSolverException e) {
+            getSolutions.reject(e);
         }
-
-        final ByteArrayOutputStream os = new ByteArrayOutputStream();
-        writeInorder(sendMoreMoney, os);
-        getSolutions.invoke(os.toString());
     }
 }
 
