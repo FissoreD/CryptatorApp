@@ -4,18 +4,16 @@ import styles from './style';
 import Color from './Color';
 import colors from './colors';
 import { COLOR_NONE } from './constants';
-
-interface Props {
-  width: number,
-}
+import { useAppSelector } from '../app/hooks';
 
 const colorsCircles = [colors.blue, colors.violet, colors.pink, colors.red, 
   colors.darkblue, colors.darkgreen, colors.green, colors.yellow, colors.orange]
 
-const ColorFooter = (props: Props) => {
+const ColorFooter = () => {
   const pad = 5;
   const border = 4
-  const size = props.width/5 - 2*pad
+  const width = useAppSelector((state) => state.window.width)
+  const size = width/5 - 2*pad
   const colorsc = []
   colorsc.push(
     <View key = {0} style = {{padding: pad}}>

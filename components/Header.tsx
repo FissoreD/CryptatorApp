@@ -5,15 +5,17 @@ import { Icon } from 'react-native-elements'
 import styles from './style';
 import colors from './colors';
 import { TOOLS } from './constants';
+import { useAppSelector } from '../app/hooks';
 
 interface Props {
   title: string;
-  width: number;
   right?: boolean;
   onLayout?:any;
 }
-const Header: React.FC<Props> = ({title, width, right, onLayout}) => {
-  const [selectedItem, setSelectedItem] = React.useState(null);
+const Header: React.FC<Props> = ({title, right, onLayout}) => {
+  const [selectedItem, setSelectedItem] = React.useState("");
+  const width = useAppSelector((state) => state.window.width)
+
   let rightElem = <View style={styles.headerRight} />
   if (right) {
     rightElem = <View style={styles.headerRight}>

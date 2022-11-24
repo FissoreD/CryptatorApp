@@ -4,20 +4,13 @@ import styles from '../components/style';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Props } from '../navigation/types';
-import { TOOLS, COLOR_NONE } from '../components/constants';
+import { COLOR_NONE } from '../components/constants';
 import puzzles from '../navigation/puzzlesList';
 import Puzzle from '../components/Puzzle';
 import { useAppSelector, useAppDispatch } from '../app/hooks';
 import { changeLetter, setLetterColor, setLetters, setName } from '../features/letterSlice'
 
 function PuzzleScreen({ route, navigation }: Props) {
-  const { height, width } = useWindowDimensions();
-
-  const selectedColor = useAppSelector((state) => state.color.value)
-  const selectedNumbers = useAppSelector((state) => state.number.selected)
-  const doneNumbers = useAppSelector((state) => state.number.done)
-  const selectedTool = useAppSelector((state) => state.tool.value)
-  const selectedLetter = useAppSelector((state) => state.letter.value)
   const name = useAppSelector((state) => state.letter.name)
   const dispatch = useAppDispatch()
 
@@ -43,9 +36,9 @@ function PuzzleScreen({ route, navigation }: Props) {
           }
         }
       >
-        <Header title = "Cryptator" width = {width} right = {true}/>
+        <Header title = "Cryptator" right = {true}/>
         <Puzzle equation = {puzzle.equation} max = {puzzle.max} />
-        <Footer width = {width} />
+        <Footer />
       </Pressable>
     </SafeAreaView>
   );

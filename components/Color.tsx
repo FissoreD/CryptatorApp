@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
+import React from 'react';
+import { Pressable, StyleProp, ViewStyle } from 'react-native';
 import colors from './colors';
 import styles from './style';
 import Icons from '../font/Cryptator-fontello';
@@ -10,7 +10,7 @@ import { setLetterColor } from '../features/letterSlice'
 
 interface ColorProps {
   color: string,
-  style?: any
+  style?: StyleProp<ViewStyle>
   width?: number
 }
 
@@ -41,7 +41,7 @@ const Color = (props: ColorProps) => {
     console.log(props.color)
   };
 
-  const style = [styles.circle, styles.center, {borderColor: borderColor, backgroundColor: backgroundColor}];
+  const style: StyleProp<ViewStyle>[] = [styles.circle, styles.center, {borderColor: borderColor, backgroundColor: backgroundColor}];
   if (props.style) {
     style.push(props.style)
   }

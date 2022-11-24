@@ -62,7 +62,7 @@ function ClassicScreen({ route, navigation }: Props) {
 
   return (
     <SafeAreaView style={[styles.container, {backgroundColor: colors.backgroundColor}]}>
-      <Header title = "Cryptator" width={width}/>
+      <Header title = "Cryptator" />
       <ScrollView showsVerticalScrollIndicator={true} contentContainerStyle={{flexGrow: 1,}}>
         {buttons}
       </ScrollView>

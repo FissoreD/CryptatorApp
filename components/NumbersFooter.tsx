@@ -2,13 +2,10 @@ import React from 'react';
 import { View } from 'react-native';
 import styles from './style';
 import Number from './Numbers';
+import { useAppSelector } from '../app/hooks';
 
-interface Props {
-  width: number,
-}
-
-const NumbersFooter = (props: Props) => {
-  const { width } = props;
+const NumbersFooter = () => {
+  const width = useAppSelector((state) => state.window.width)
   const pad = 5;
   const size = width/5 - 2*pad;
   const numbers = []
