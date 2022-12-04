@@ -39,13 +39,13 @@
 
 
 ## Scénario du mode "solver" :
-- Menue démarrer : je clique n’importe où
-- Menue défilent avec tous les modes de jeux : je clique sur « Solver »
-- Menue de tous les types de saisis de cryptarithme : je clique sur « Text»
-  - Mode de saisie « Text » :
+- Menue démarrer: je clique n’importe où
+- Menue défilent avec tous les modes de jeux: je clique sur «Solver»
+- Menue de tous les types de saisis de cryptarithme : je clique sur «Text»
+  - Mode de saisie «Text»:
   - Je clique sur la barre de saisie -> le clavier s’ouvre
-  - J’écris « SEND+MORE=MONEY »
-  - Je tape « entrer » -> le cryptarithme s’écrit « joliment »
+  - J’écris «SEND+MORE=MONEY»
+  - Je tape «entrer» -> le cryptarithme s’écrit «joliment»
   - Je ferme le clavier
   - Je clique sur « Next »
 - Page de paramétrage de mon cryptarithme :
