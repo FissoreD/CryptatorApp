@@ -1,9 +1,7 @@
 import { createSlice, Slice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../app/store'
-import { TOOLS } from '../components/constants'
-import { getSolutions } from '../backend/nativeModules';
-import puzzles from '../navigation/puzzlesList';
+import { setEngine } from '../backend/nativeModules';
 
 interface CryptatorConfigState {
   solutionLimit?: number;
@@ -80,7 +78,8 @@ export const cryptatorConfigSlice: Slice<CryptatorState> = createSlice({
       }
     },
     setCryptarithm: (state, action: PayloadAction<number>) => {
-      state.cryptarithmIndex = action.payload
+      state.cryptarithmIndex = action.payload;
+      setEngine(action.payload);
     }
   },
 })
@@ -91,3 +90,4 @@ export const { setConfig, resetConfig, solve, setCryptarithm } = cryptatorConfig
 export const selectTool = (state: RootState) => state.tool.value
 
 export default cryptatorConfigSlice.reducer
+

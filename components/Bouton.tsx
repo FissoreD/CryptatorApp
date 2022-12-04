@@ -55,7 +55,7 @@ const ClickableIcon = (props: ClickableIconProp) => {
 };
 
 interface ClickableOnceIconProp extends IconProps {
-  onPress: (tool: number) => void
+  onPress: (tool: number) => Promise<void>
 }
 
 const ClickableOnceIcon = (props: ClickableOnceIconProp) => {

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Pressable, SafeAreaView, useWindowDimensions } from 'react-native';
-import styles from '../components/style';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { Props } from '../navigation/types';
+import { Pressable, SafeAreaView } from 'react-native';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { COLOR_NONE } from '../components/constants';
-import puzzles from '../navigation/puzzlesList';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import Puzzle from '../components/Puzzle';
-import { useAppSelector, useAppDispatch } from '../app/hooks';
-import { changeLetter, setLetterColor, setLetters, setName } from '../features/letterSlice'
+import styles from '../components/style';
+import { changeLetter, setLetterColor, setLetters, setName } from '../features/letterSlice';
 import { setCryptarithm } from '../features/solverConfigSlice';
+import puzzles from '../navigation/puzzlesList';
+import { Props } from '../navigation/types';
 
 function PuzzleScreen({ route, navigation }: Props) {
   const name = useAppSelector((state) => state.letter.name)

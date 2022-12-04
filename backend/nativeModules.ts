@@ -1,13 +1,14 @@
 import { NativeModules } from 'react-native';
-import { useDispatch } from 'react-redux';
-import { useAppSelector } from '../app/hooks';
 import puzzles from '../navigation/puzzlesList';
 
-interface SolverModule {
-  getSolutions: (puzzle_str: string) => Promise<string>
+interface GameEngine {
+  getSolutions: (puzzle_str: string) => Promise<string>,
+  setEngine: (cryptarithm: string) => Promise<void>,
+  takeDecision: (symbol: string, reOperator: string, value: number) => Promise<boolean>,
+  isSolved: () => Promise<boolean>
 }
 
-const SolverModule: SolverModule = NativeModules.CryptatorModule;
+const gameEngine: GameEngine = NativeModules.CryptatorGame;
 
 const buildPuzzle = (puzzleId: number) => {
   return puzzles[puzzleId].equation.join("");
@@ -15,5 +16,16 @@ const buildPuzzle = (puzzleId: number) => {
 
 export const getSolutions = async (puzzleId: number) => {
   // TODO : treat exceptions !
-  return await SolverModule.getSolutions(buildPuzzle(puzzleId));
+  let puzzle = buildPuzzle(puzzleId);
+  return await gameEngine.getSolutions(puzzle);
 };
+
+export const setEngine = (puzzleId: number) => {
+  let puzzle = buildPuzzle(puzzleId);
+  gameEngine.setEngine(puzzle);
+}
+
+export const isSolved = gameEngine.isSolved
+export const takeDecision = async (symbol: string, value: string) => {
+  return await (value !== "" && symbol !== "" && gameEngine.takeDecision(symbol, "=", parseInt(value)));
+}

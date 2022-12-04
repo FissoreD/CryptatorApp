@@ -2,16 +2,18 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../app/store'
 
+type condition = "selected" | "done" | "invalid"
+
 // Define a type for the slice state
 interface NumberState {
   selected: string[]
-  done: string[]
+  done: string[],
 }
 
 // Define the initial state using that type
 const initialState: NumberState = {
   selected: [],
-  done: [],
+  done: []
 }
 
 export const numberSlice = createSlice({
@@ -32,7 +34,7 @@ export const numberSlice = createSlice({
       state.selected.push(action.payload)
     },
     removeSelected: (state, action: PayloadAction<string>) => {
-      state.selected = (state.selected.filter(e => e !== action.payload)); 
+      state.selected = (state.selected.filter(e => e !== action.payload));
     },
     clearDone: (state) => {
       state.done = []
@@ -47,13 +49,13 @@ export const numberSlice = createSlice({
       state.done.push(action.payload)
     },
     removeDone: (state, action: PayloadAction<string>) => {
-      state.done = (state.done.filter(e => e !== action.payload)); 
+      state.done = (state.done.filter(e => e !== action.payload));
     },
   },
 })
 
-export const { clearSelected, setSelected, setSelectedArray, addSelected, removeSelected, 
-  clearDone, setDone, setDoneArray, addDone, removeDone } = numberSlice.actions
+export const { clearSelected, setSelected, setSelectedArray, addSelected, removeSelected,
+  clearDone, setDone, setDoneArray, addDone, removeDone, } = numberSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectedNumber = (state: RootState) => state.number.selected

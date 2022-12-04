@@ -25,7 +25,7 @@ public class CryptatorPackage implements ReactPackage {
             @NonNull ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
 
-        modules.add(new CryptatorModule(reactContext));
+        modules.add(new CryptatorGame(reactContext));
 
         return modules;
     }
