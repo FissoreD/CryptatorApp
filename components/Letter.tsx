@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Pressable, StyleProp, StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import { changeLetter, setLetterColor } from '../features/letterSlice';

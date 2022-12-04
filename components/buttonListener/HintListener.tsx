@@ -12,10 +12,10 @@ const createHintMessage = async (puzzleId: number) => {
     [
       {
         text: "Cancel",
-        onPress: () => console.log("Cancel Pressed"),
+        onPress: () => console.log("Cancel Pressed in hint"),
         style: "cancel"
       },
-      { text: "OK", onPress: () => console.log("OK Pressed") }
+      { text: "OK", onPress: () => console.log("OK Pressed in hint") }
     ]
   );
 }

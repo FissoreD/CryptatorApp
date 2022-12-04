@@ -18,8 +18,6 @@ function PuzzleScreen({ route, navigation }: Props) {
   const { index } = route.params;
   const puzzle = puzzles[index];
 
-  console.log("* The current puzzle index is : ", index);
-
   if (name !== puzzle.name) {
     dispatch(setCryptarithm(index));
     console.log("+ The letters are " + puzzle.letters)
@@ -35,11 +33,7 @@ function PuzzleScreen({ route, navigation }: Props) {
     <SafeAreaView style={styles.container}>
       <Pressable
         style={[styles.full]}
-        onPress={() => {
-          dispatch(changeLetter(""))
-        }
-        }
-      >
+        onPress={() => { dispatch(changeLetter("")) }}>
         <Header title="Cryptator" right={true} />
         <Puzzle equation={puzzle.equation} max={puzzle.max} />
         <Footer />

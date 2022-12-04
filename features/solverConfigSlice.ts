@@ -28,7 +28,8 @@ interface CryptatorConfigState {
 interface CryptatorState {
   config: Required<CryptatorConfigState>,
   solution: string,
-  cryptarithmIndex: number
+  cryptarithmIndex: number,
+  solved: boolean
 }
 
 const initialConfig: Required<CryptatorConfigState> = {
@@ -57,7 +58,8 @@ const initialConfig: Required<CryptatorConfigState> = {
 const initialState: Required<CryptatorState> = {
   config: { ...initialConfig },
   solution: "",
-  cryptarithmIndex: 0
+  cryptarithmIndex: 0,
+  solved: false
 }
 
 export const cryptatorConfigSlice: Slice<CryptatorState> = createSlice({
@@ -80,11 +82,14 @@ export const cryptatorConfigSlice: Slice<CryptatorState> = createSlice({
     setCryptarithm: (state, action: PayloadAction<number>) => {
       state.cryptarithmIndex = action.payload;
       setEngine(action.payload);
+    },
+    setSolved: (state, solved: PayloadAction<boolean>) => {
+      state.solved = solved.payload
     }
   },
 })
 
-export const { setConfig, resetConfig, solve, setCryptarithm } = cryptatorConfigSlice.actions
+export const { setConfig, resetConfig, solve, setCryptarithm, setSolved } = cryptatorConfigSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectTool = (state: RootState) => state.tool.value

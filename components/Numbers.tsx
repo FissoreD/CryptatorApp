@@ -1,9 +1,10 @@
 import React from 'react';
 import { Pressable, StyleProp, Text, ViewStyle } from 'react-native';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
-import { takeDecision } from '../backend/nativeModules';
+import { isSolved, takeDecision } from '../backend/nativeModules';
 import { addAnnotation, addInvalidAffectation, clearAffectation, makeAffectation, removeAnnotation } from '../features/letterSlice';
-import { addSelected, clearSelected, removeSelected, setSelected } from '../features/numberSlice';
+import { clearSelected, setSelected } from '../features/numberSlice';
+import solvedMessage from './buttonListener/SolvedPopUp';
 import colors from './colors';
 import { TOOLS } from './constants';
 import styles from './style';
@@ -55,6 +56,9 @@ const Number = (props: NumberProps) => {
         dispatch(makeAffectation(props.name));
         let res = await takeDecision(selectedLetter, props.name);
         if (!res) dispatch(addInvalidAffectation());
+        else if (await isSolved()) {
+          solvedMessage()
+        }
       }
     } else if (selectedTool === TOOLS.PENCIL) {
       if (affectation) return
