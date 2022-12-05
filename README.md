@@ -54,7 +54,7 @@ This interface uses the [React Native](https://reactnative.dev/) framework, allo
   <tbody>
     <tr>
       <td>
-      <img src="readmeImages/sendmoremoney.png" alt="sendmoremoney" width="400"> 
+      <img src="readmeImages/sendmoremoney.png" alt="sendmoremoney" width="1000"> 
       </td>
       <td>
           You are able to solve yourself one of the proposed cryptarithms with the following tools:  
@@ -63,7 +63,7 @@ This interface uses the [React Native](https://reactnative.dev/) framework, allo
           <img src="font/icons/pencil.svg" alt="the bucket" width="20" style="background:white"/> The pencil allowing you to write small annotation on a letter in order to simplify the solution.
         </li>
         <li>
-          <img src="font/icons/pen.svg" alt="the bucket" width="20" style="background:white"/> The pen, allowing you to make an affectation to a letter of the cryptarithm.
+          <img src="font/icons/pen.svg" alt="the bucket" width="20" style="background:white"/> The pen, allowing you to make an affectation to a letter of the cryptarithm. If a letter is affected to a digit N, then if you click again on N, the affectations is removed. Moreover a selected digit become usselectable until it is affected to a letter. 
         </li>
         <li>
           <img src="font/icons/bucket.svg" alt="the bucket" width="20" style="background:white"/> The bucket, allowing you to color the letters of the cryptarithms to visually help your solving approach.
@@ -80,7 +80,7 @@ This interface uses the [React Native](https://reactnative.dev/) framework, allo
 
 Note that in the **easy** mode, invalid affectations will appear in red and that the pencil avoid to enter already used numbers.
 
-When the game is finished, a congratulation popup is triggered.
+When the game is finished, a congratulation popup is triggered, proposing you to pass to the following level.
 
 ## Generate a cryptarithm
 
