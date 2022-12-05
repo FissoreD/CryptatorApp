@@ -104,7 +104,7 @@ const PressableLetter = (props: LetterProps) => {
   const letterStyle = letterStyles.get(affectation ? "pen" : "toChoose")!;
 
   return (
-    <Pressable style={[{ borderWidth: 2, borderColor: activeBorder }, styles.letterSize, styles.center]} onPress={onPlay}>
+    <Pressable style={[{ borderWidth: 2, borderColor: activeBorder, borderRadius: 10 }, styles.letterSize, styles.center]} onPress={onPlay}>
       {/* The letter */}
       <View style={[{ position: "absolute" }, styles.full, letterStyle.position]}>
         <Text style={letterStyle.letter}>{props.name}</Text>
