@@ -41,7 +41,7 @@ const PressableLetter = (props: LetterProps) => {
   const lettersColor = useAppSelector((state) => state.letter.lettersColor)
   const selectedTool = useAppSelector((state) => state.tool.value)
   const selectedColor = useAppSelector((state) => state.color.value)
-  const affectation = useAppSelector((state) => state.letter.affectationsLetter)[props.name] || ""
+  const affectation = useAppSelector((state) => state.letter.affectation)[props.name] || ""
   const invalidAffectation = useAppSelector((state) => state.letter.invalidNumbers)
   const annotations = useAppSelector((state) => state.letter.annotations)[props.name] || []
   const valueColor = invalidAffectation.includes(affectation) ? colors.red : colors.black

@@ -26,7 +26,7 @@ const Number = (props: NumberProps) => {
   const selectedLetter = useAppSelector((state) => state.letter.selectedLetter)
   const annotations = useAppSelector((state) => state.letter.annotations)[selectedLetter] || []
   const invalidAffectation = useAppSelector((state) => state.letter.invalidNumbers)
-  const affectation = useAppSelector((state) => state.letter.affectationsLetter)[selectedLetter] || ""
+  const affectation = useAppSelector((state) => state.letter.affectation)[selectedLetter] || ""
 
   const dispatch = useAppDispatch()
 

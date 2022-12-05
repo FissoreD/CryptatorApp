@@ -8,7 +8,7 @@ interface LetterState {
   name: string,
   letters: string[],
   lettersColor: string[],
-  affectationsLetter: { [letter: string]: string }
+  affectation: { [letter: string]: string }
   usedNumbers: string[],
   invalidNumbers: string[],
   annotations: { [letter: string]: string[] }
@@ -20,7 +20,7 @@ const initialState: LetterState = {
   name: "",
   letters: [],
   lettersColor: [],
-  affectationsLetter: {},
+  affectation: {},
   usedNumbers: [],
   invalidNumbers: [],
   annotations: {}
@@ -43,22 +43,25 @@ export const letterSlice = createSlice({
     setLetters: (state, action: PayloadAction<string[]>) => {
       state.letters = action.payload
     },
-    makeAffectation: (state, action: PayloadAction<string>) => {
+    makeAffectation: (state, affectation: PayloadAction<string>) => {
       const letter = state.selectedLetter;
-      state.usedNumbers = state.usedNumbers.filter(e => e !== state.affectationsLetter[letter]);
-      state.invalidNumbers = state.invalidNumbers.filter(e => e !== state.affectationsLetter[letter]);
-      state.affectationsLetter[letter] = action.payload;
-      state.usedNumbers.push(action.payload);
-      state.annotations[letter] = []
+      state.usedNumbers = state.usedNumbers.filter(e => e !== state.affectation[letter]);
+      state.invalidNumbers = state.invalidNumbers.filter(e => e !== state.affectation[letter]);
+      state.affectation[letter] = affectation.payload;
+      state.usedNumbers.push(affectation.payload);
+      state.annotations[letter] = [];
+      for (const annotation in state.annotations) {
+        state.annotations[annotation] = state.annotations[annotation].filter(e => e != affectation.payload)
+      }
     },
     clearAffectation: (state) => {
-      state.usedNumbers = state.usedNumbers.filter(e => e !== state.affectationsLetter[state.selectedLetter]);
-      state.invalidNumbers = state.invalidNumbers.filter(e => e !== state.affectationsLetter[state.selectedLetter]);
-      state.affectationsLetter[state.selectedLetter] = "";
+      state.usedNumbers = state.usedNumbers.filter(e => e !== state.affectation[state.selectedLetter]);
+      state.invalidNumbers = state.invalidNumbers.filter(e => e !== state.affectation[state.selectedLetter]);
+      state.affectation[state.selectedLetter] = "";
     },
     addInvalidAffectation: (state) => {
-      state.usedNumbers = state.usedNumbers.filter(e => e !== state.affectationsLetter[state.selectedLetter]);
-      state.invalidNumbers.push(state.affectationsLetter[state.selectedLetter])
+      state.usedNumbers = state.usedNumbers.filter(e => e !== state.affectation[state.selectedLetter]);
+      state.invalidNumbers.push(state.affectation[state.selectedLetter])
     },
     addAnnotation: (state, annotation: PayloadAction<string>) => {
       const annotations = state.annotations[state.selectedLetter] || []
