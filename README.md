@@ -6,13 +6,31 @@ This interface uses the [React Native](https://reactnative.dev/) framework, allo
 
 # The application structure
 
-- Welcome screen
-- Home page
-  - Play a game
-  - Generate a cryptarithm
-  - Creation your cryptarithm
-- Help panel
-- Credits
+- [About this folder](#about-this-folder)
+- [The application structure](#the-application-structure)
+  - [Welcome screen](#welcome-screen)
+  - [The home page](#the-home-page)
+  - [Play a game](#play-a-game)
+  - [Generate a cryptarithm](#generate-a-cryptarithm)
+  - [Create your cryptarithm](#create-your-cryptarithm)
+  - [The help panel](#the-help-panel)
+  - [Credits](#credits)
+- [TODO](#todo)
+
+## Welcome screen
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="readmeImages/welcomePage.png" alt="welcomepage" width="150"> 
+      </td>
+      <td>
+        From this screen, click anywhere to go into the Home Page of the game
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## The home page
 In the home page you are able to select how to interact with Cryptarithms. You can play a game, where you can solve a cryptarithm yourself, generate automatically a cryptarithm with existing words coming from different thematic, create your custom cryptarithm and verify its validity.
@@ -55,6 +73,10 @@ When the game is finished, a congratulation popup is triggered.
 ## Generate a cryptarithm
 
 ## Create your cryptarithm
+
+## The help panel
+
+## Credits
 
 # TODO
 
