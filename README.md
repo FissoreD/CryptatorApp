@@ -8,13 +8,13 @@ This interface uses the [React Native](https://reactnative.dev/) framework, allo
 
 - Welcome screen
 - Home page
-  - Play a classic game
+  - Play a game
   - Generate a cryptarithm
   - Creation your cryptarithm
 - Help panel
 - Credits
 
-# The home page
+## The home page
 In the home page you are able to select how to interact with Cryptarithms. You can play a game, where you can solve a cryptarithm yourself, generate automatically a cryptarithm with existing words coming from different thematic, create your custom cryptarithm and verify its validity.
 
 ## Play a game
@@ -55,7 +55,6 @@ When the game is finished, a congratulation popup is triggered.
 ## Generate a cryptarithm
 
 ## Create your cryptarithm
-  
 
 # TODO
 
