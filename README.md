@@ -23,7 +23,7 @@ This interface uses the [React Native](https://reactnative.dev/) framework, allo
   <tbody>
     <tr>
       <td>
-        <img src="readmeImages/welcomePage.png" alt="welcomepage" width="150"> 
+        <img src="readmeImages/welcomePage.png" alt="welcomepage" width="200"> 
       </td>
       <td>
         From this screen, click anywhere to go into the Home Page of the game
@@ -33,7 +33,19 @@ This interface uses the [React Native](https://reactnative.dev/) framework, allo
 </table>
 
 ## The home page
-In the home page you are able to select how to interact with Cryptarithms. You can play a game, where you can solve a cryptarithm yourself, generate automatically a cryptarithm with existing words coming from different thematic, create your custom cryptarithm and verify its validity.
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <img src="readmeImages/homePage.png" alt="welcomepage" width="1000"> 
+      </td>
+      <td>
+       In the home page you are able to select how to interact with Cryptarithms. You can play a game, where you can solve a cryptarithm yourself, generate automatically a cryptarithm with existing words coming from different thematic, create your custom cryptarithm and verify its validity.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Play a game
 
@@ -42,7 +54,7 @@ In the home page you are able to select how to interact with Cryptarithms. You c
   <tbody>
     <tr>
       <td>
-      <img src="readmeImages/sendmoremoney.png" alt="sendmoremoney" width="300"> 
+      <img src="readmeImages/sendmoremoney.png" alt="sendmoremoney" width="400"> 
       </td>
       <td>
           You are able to solve yourself one of the proposed cryptarithms with the following tools:  
