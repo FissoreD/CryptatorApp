@@ -4,22 +4,22 @@ import type { RootState } from '../app/store'
 import { setEngine } from '../backend/nativeModules';
 
 interface CryptatorConfigState {
-  solutionLimit?: number;
+  solutionLimit?: number; // Remove
   timeLimit?: number;
   useBigNum?: boolean;
   dryRun?: boolean;
   countryCode?: string;
   langCode?: string;
-  nthreads?: number;
+  nthreads?: number; // Remove
   minLeftOperands?: number;
   maxLeftOperands?: number;
-  lightModel?: boolean;
-  lightPropagation?: boolean;
+  lightModel?: boolean; // Bench
+  lightPropagation?: boolean; // Bench
   arithmeticBase?: number;
-  allowLeadingZeros?: boolean;
-  hornerScheme?: boolean;
-  relaxMaxDigitOccurrence?: number;
-  relaxMinDigitOccurrence?: number;
+  allowLeadingZeros?: boolean; // Remove
+  hornerScheme?: boolean; // Remove
+  relaxMaxDigitOccurrence?: number; // Remove
+  relaxMinDigitOccurrence?: number; // Remove
   checkSolution?: boolean;
   graphviz?: boolean;
   verbose?: boolean,
