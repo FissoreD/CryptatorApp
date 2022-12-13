@@ -2,20 +2,25 @@ import React from 'react';
 import { Pressable, TouchableOpacity, StyleSheet } from 'react-native';
 import colors from './colors';
 import Icons from '../font/Cryptator-fontello';
+import { useAppSelector } from '../app/hooks';
 
 interface IconProps {
   name: string,
   print: string,
   flexBasis: string,
-  onPress?: any,
   selectedItem: string,
-  setSelectedItem: any,
+  setSelectedItem: (newName: string) => void
 }
 
-const ClickableIcon = (props: IconProps) => {
+interface ClickableIconProp extends IconProps {
+  onPress: (tool: string) => void,
+}
+
+const ClickableIcon = (props: ClickableIconProp) => {
   const { selectedItem, setSelectedItem } = props;
+
   const style = StyleSheet.create({
-    item:{
+    item: {
       display: 'flex',
       flexBasis: props.flexBasis,
       height: '100%',
@@ -43,15 +48,21 @@ const ClickableIcon = (props: IconProps) => {
   };
 
   return (
-    <Pressable onPress={onPlay} style={[style.item, {backgroundColor: activeBackgroundColor}]}>
-      <Icons name={props.name} size={80} style={{color: activeColor}} />
+    <Pressable onPress={onPlay} style={[style.item, { backgroundColor: activeBackgroundColor }]}>
+      <Icons name={props.name} size={80} style={{ color: activeColor }} />
     </Pressable>
   );
 };
 
-const ClickableOnceIcon = (props: IconProps) => {
+interface ClickableOnceIconProp extends IconProps {
+  onPress: (tool: number) => Promise<void>
+}
+
+const ClickableOnceIcon = (props: ClickableOnceIconProp) => {
+  let puzzleId = useAppSelector((state) => state.solver.cryptarithmIndex)
+
   const style = StyleSheet.create({
-    item:{
+    item: {
       display: 'flex',
       flexBasis: props.flexBasis,
       height: '100%',
@@ -63,14 +74,15 @@ const ClickableOnceIcon = (props: IconProps) => {
   });
 
   const onPlay = async () => {
+    await props.onPress(puzzleId)
     console.log(props.print)
   };
 
   return (
     <TouchableOpacity onPress={onPlay} style={style.item}>
-      <Icons name={props.name} size={80} style={{color: colors.color}} />
+      <Icons name={props.name} size={80} style={{ color: colors.color }} />
     </TouchableOpacity>
   );
 };
 
-export {ClickableIcon, ClickableOnceIcon};
+export { ClickableIcon, ClickableOnceIcon };

@@ -4,6 +4,7 @@ import colorReducer from '../features/colorSlice'
 import numberReducer from '../features/numberSlice'
 import letterReducer from '../features/letterSlice'
 import windowReducer from '../features/windowSlice'
+import solverConfigSlice from '../features/solverConfigSlice'
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     number: numberReducer,
     letter: letterReducer,
     window: windowReducer,
+    solver: solverConfigSlice
   },
 })
 

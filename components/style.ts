@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import colors from './colors';
 import { HEADER_HEIGHT, FOOTER_HEIGHT, CIRCLE_SIZE, BORDER_SIZE } from './constants';
 
@@ -6,15 +6,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  pad10 : {
+  pad10: {
     width: '100%',
     padding: 10,
   },
-  pad20 : {
+  pad20: {
     width: '100%',
     padding: 20,
   },
-  pad10_20 : {
+  pad10_20: {
     width: '100%',
     paddingHorizontal: 20,
     paddingVertical: 10,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     alignContent: 'center',
-  }, 
+  },
   full: {
     height: '100%',
     width: '100%',
@@ -84,13 +84,13 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    height : 65,
+    height: 65,
     borderWidth: 2,
     borderColor: colors.color,
   },
   buttonList: {
     width: '100%',
-    height : 65,
+    height: 65,
     borderWidth: 2,
     borderColor: colors.color,
     flexDirection: 'row',
@@ -110,12 +110,17 @@ const styles = StyleSheet.create({
     height: CIRCLE_SIZE,
     width: CIRCLE_SIZE,
     borderWidth: BORDER_SIZE,
-    borderRadius: CIRCLE_SIZE/2,
+    borderRadius: CIRCLE_SIZE / 2,
+  },
+  letterSize: {
+    height: CIRCLE_SIZE,
+    width: CIRCLE_SIZE,
   },
   letter: {
     height: CIRCLE_SIZE,
     width: CIRCLE_SIZE,
-    fontSize: CIRCLE_SIZE-10,
+    fontSize: CIRCLE_SIZE - 10,
+    lineHeight: CIRCLE_SIZE,
     fontWeight: '600',
   }
 });
