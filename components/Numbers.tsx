@@ -15,7 +15,7 @@ interface NumberProps {
 }
 
 const buttonStyle = {
-  "Active": { bg: colors.black, border: colors.lightgray, txt: colors.lightgray },
+  "Active": { bg: colors.black, border: colors.blue, txt: colors.pink },
   "Blocked": { bg: colors.none, border: colors.black, txt: colors.lightgray },
 }
 
@@ -30,9 +30,9 @@ const Number = (props: NumberProps) => {
 
   const dispatch = useAppDispatch()
 
-  const activeColor = doneNumbers.includes(props.name) ? colors.lightgray : usedNumbers.includes(props.name) ? colors.color : colors.black;
-  const activeBackgroundColor = usedNumbers.includes(props.name) ? colors.black : invalidAffectation.includes(props.name) ? colors.red : colors.none;
-  const activeBorderColor = doneNumbers.includes(props.name) ? colors.lightgray : colors.black;
+  const activeColor = affectation === props.name ? colors.backgroundColor : usedNumbers.includes(props.name) ? colors.lightgray : colors.black;
+  const activeBackgroundColor = colors.none;
+  const activeBorderColor = affectation === props.name ? colors.backgroundColor : usedNumbers.includes(props.name) ? colors.lightgray : colors.black;
 
   const style: StyleProp<ViewStyle>[] = [styles.circle, styles.center, { borderColor: activeBorderColor, backgroundColor: activeBackgroundColor }];
   if (props.style) {

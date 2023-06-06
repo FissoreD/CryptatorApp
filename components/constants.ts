@@ -8,7 +8,7 @@ export enum TOOLS {
 
 export const COLOR_NONE = "none"
 
-export const CIRCLE_SIZE = 60;
+export const CIRCLE_SIZE = 45;
 export const BORDER_SIZE = 2;
 
 export const HEADER_HEIGHT = 100;

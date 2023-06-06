@@ -16,9 +16,10 @@ interface Puzzle {
 
 const puzzlesList:PuzzleData[] = [
   {name: 'SEND+MORE', equation: ["SEND", "+", "MORE", "=", "MONEY"]},
-  {name: 'a+b=c', equation: ["a", "+", "b", "=", "c"]},
-  {name: 'coucou-toi', equation: ["coucou", "-", "toi", "=", "salut"]},
-  {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
+  {name: 'PUZZLE', equation: ["LETTER", "+", "VALUE", "=", "PUZZLE"]},
+  {name: 'TRENTE', equation: ["CINQ", "+", "UN", "+", "TROIS", "+", "ONZE", "+", "QUINZE", "=", "TRENTE"]},
+  {name: 'TRENTE', equation: ["CINQ", "*", "SIX", "=", "TRENTE"]},
+  {name: 'PROLOG', equation: ["LEARN", "+", "LINEAR", "+", "LOGIC", "=", "PROLOG"]},
   {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
   {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},
   {name: '...', equation: ["ABC", "+", "CDE", "=", "FGH"]},

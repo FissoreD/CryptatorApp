@@ -25,9 +25,6 @@ const Puzzle = (props: PuzzleProps) => {
       justifyContent: "flex-end",
     },
     letter: {
-      height: 60,
-      width: 45,
-      fontSize: 50,
       fontweight: 600
     }
   });
@@ -41,7 +38,7 @@ const Puzzle = (props: PuzzleProps) => {
       operator = "";
       const toAddletters = [];
       if (equation[i] === COMPARATORS.EQ) {
-        for (let j = 0; j < max; j++) {
+        for (let j = 0; j < max-1; j++) {
           toAddletters.push(<Letter key={key} name="—" style={localStyle.letter} />);
           key++
         }
